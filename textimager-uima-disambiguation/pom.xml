@@ -6,6 +6,16 @@
 		<artifactId>textimager-uima</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+	<build>
+		<plugins>
+		
+			<plugin>
+        		<groupId>maven-assembly</groupId>
+        		<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+		</plugins>
+	
+	</build>
 	<artifactId>textimager-uima-disambiguation</artifactId>
 	<dependencies>
 		<dependency>
@@ -34,5 +44,13 @@
 			<artifactId>germanet-api</artifactId>
 			<version>13.1.0</version>
 		</dependency>
+		<dependency>
+	            <groupId>org.apache.uima</groupId>
+	            <artifactId>uimafit-core</artifactId>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.apache.uima</groupId>
+	            <artifactId>uimaj-core</artifactId>
+	        </dependency>
 	</dependencies>
 </project>

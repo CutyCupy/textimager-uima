@@ -7,6 +7,14 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>textimager-uima-types</artifactId>
+	<build>
+        <plugins>
+            <plugin>
+        		<groupId>maven-assembly</groupId>
+		        <artifactId>maven-assembly-plugin</artifactId>
+        	</plugin>
+        </plugins>
+    </build>
 	<repositories>
 		<repository>
 			<id>hu-central</id>
@@ -23,17 +31,26 @@
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl</artifactId>
-			<version>1.9.0</version>
+			<version>1.10.0</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl</artifactId>
-			<version>1.9.0</version>
+			<version>1.10.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.texttechnologylab</groupId>
 			<artifactId>UIMATypeSystem</artifactId>
-			<version>547f4a97b2</version>
+			<!--  <version>547f4a97b2</version> -->
+			<version>1.7.4</version>
 		</dependency>
+		<dependency>
+	            <groupId>org.apache.uima</groupId>
+	            <artifactId>uimafit-core</artifactId>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.apache.uima</groupId>
+	            <artifactId>uimaj-core</artifactId>
+	        </dependency>
 	</dependencies>
 </project>

@@ -34,26 +34,21 @@
 			<artifactId>json</artifactId>
 			<version>20180130</version>
 		</dependency>
+		<dependency>
+	            <groupId>org.apache.uima</groupId>
+	            <artifactId>uimafit-core</artifactId>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.apache.uima</groupId>
+	            <artifactId>uimaj-core</artifactId>
+	        </dependency>
 	</dependencies>
 	
 	<build>
 		<plugins>
 			<plugin>
+        		<groupId>maven-assembly</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.6</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
