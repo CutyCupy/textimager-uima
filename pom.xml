@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.hucompute.textimager.uima</groupId>
 	<artifactId>textimager-uima</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>TextImager UIMA</name>
 	<build>
 		<pluginManagement>
@@ -56,6 +56,11 @@
 				<artifactId>uimafit-core</artifactId>
 				<version>2.3.0</version>
 			</dependency>
+  <dependency>
+    <groupId>textimager-uima-types</groupId>
+    <artifactId>test</artifactId>
+    <version>1.0.0</version>
+  </dependency>
 		</dependencies>
 
 	</dependencyManagement>
@@ -63,7 +68,7 @@
 		<!-- <module>textimager-uima-base-annotators</module> -->
 		<!-- <module>textimager-uima-marmot</module> -->
 		<!-- <module>textimager-uima-wiki</module> -->
-		<!-- <module>textimager-uima-types</module> -->
+		<module>textimager-uima-types</module>
 		<!-- <module>textimager-uima-OpenerProject</module> -->
 		<!-- <module>textimager-uima-talismane</module> -->
 		<!-- <module>textimager-uima-IXA</module> -->
@@ -78,4 +83,13 @@
 		<!-- <module>textimager-uima-HUComputeNER</module> -->
 		<!-- <module>textimager-uima-disambiguation</module> -->
 	</modules>
+	
+	
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub CutyCupy Apache Maven Packages</name>
+			<url>https://github.com/CutyCupy/textimager-uima/</url>
+		</repository>
+	</distributionManagement>
 </project>

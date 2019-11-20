@@ -1,20 +1,22 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.hucompute.textimager.uima</groupId>
 		<artifactId>textimager-uima</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+		<version>0.0.1</version>
 	</parent>
 	<artifactId>textimager-uima-types</artifactId>
 	<build>
-        <plugins>
-            <plugin>
-        		<groupId>maven-assembly</groupId>
-		        <artifactId>maven-assembly-plugin</artifactId>
-        	</plugin>
-        </plugins>
-    </build>
+		<plugins>
+			<plugin>
+				<groupId>maven-assembly</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 	<repositories>
 		<repository>
 			<id>hu-central</id>
@@ -41,16 +43,24 @@
 		<dependency>
 			<groupId>com.github.texttechnologylab</groupId>
 			<artifactId>UIMATypeSystem</artifactId>
-			<!--  <version>547f4a97b2</version> -->
+			<!-- <version>547f4a97b2</version> -->
 			<version>1.7.4</version>
 		</dependency>
 		<dependency>
-	            <groupId>org.apache.uima</groupId>
-	            <artifactId>uimafit-core</artifactId>
-	        </dependency>
-	        <dependency>
-	            <groupId>org.apache.uima</groupId>
-	            <artifactId>uimaj-core</artifactId>
-	        </dependency>
+			<groupId>org.apache.uima</groupId>
+			<artifactId>uimafit-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.uima</groupId>
+			<artifactId>uimaj-core</artifactId>
+		</dependency>
 	</dependencies>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub CutyCupy Apache Maven Packages</name>
+			<url>https://github.com/CutyCupy/textimager-uima/</url>
+		</repository>
+	</distributionManagement>
 </project>
