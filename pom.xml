@@ -20,7 +20,7 @@
 					</configuration>
 				</plugin>
 				<plugin>
-					<groupId>maven-assembly</groupId>
+					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-assembly-plugin</artifactId>
 					<version>3.2.0</version>
 					<configuration>
@@ -56,6 +56,11 @@
 				<artifactId>uimafit-core</artifactId>
 				<version>2.3.0</version>
 			</dependency>
+			<dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <version>3.2.0</version>
+</dependency>
   <dependency>
     <groupId>textimager-uima-types</groupId>
     <artifactId>test</artifactId>
@@ -89,7 +94,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub CutyCupy Apache Maven Packages</name>
-			<url>https://github.com/CutyCupy/textimager-uima/</url>
+			<url>https://maven.pkg.github/CutyCupy/textimager-uima/</url>
 		</repository>
 	</distributionManagement>
 </project>

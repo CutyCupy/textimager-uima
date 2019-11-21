@@ -11,7 +11,7 @@
 	<build>
 		<plugins>
 			<plugin>
-        		<groupId>maven-assembly</groupId>
+        		<groupId>org.apache.maven.plugins</groupId>
 		        <artifactId>maven-assembly-plugin</artifactId>
         	</plugin>
 
@@ -42,7 +42,7 @@
 		<dependency>
 			<groupId>org.hucompute.textimager.uima</groupId>
 			<artifactId>textimager-uima-types</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.json</groupId>
