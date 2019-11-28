@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>TextImager</groupId>
   <artifactId>Resha-Turkish-Stemmer</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <repositories>
     <repository>
         <id>hrzafer-repo</id>
