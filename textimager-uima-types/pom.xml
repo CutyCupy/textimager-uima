@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.hucompute.textimager.uima</groupId>
 		<artifactId>textimager-uima</artifactId>
-		<version>0.0.21</version>
+		<version>0.0.22</version>
 	</parent>
 	<artifactId>textimager-uima-types</artifactId>
 	<build>
@@ -29,12 +29,12 @@
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl</artifactId>
-			<version>1.10.0</version>
+      			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl</artifactId>
-			<version>1.10.0</version>
+      			<version>${dkpro.version}</version>
 		</dependency>
 		<!-- <dependency> <groupId>com.github.texttechnologylab</groupId> <artifactId>UIMATypeSystem</artifactId> 
 			<version>547f4a97b2</version> </dependency> -->

@@ -22,12 +22,12 @@
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.syntax-asl</artifactId>
-			<version>1.8.0</version>
+      			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.semantics-asl</artifactId>
-			<version>1.8.0</version>
+      			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.vinhkhuc</groupId>
@@ -38,7 +38,7 @@
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.testing-asl</artifactId>
 			<scope>test</scope>
-			<version>1.8.0</version>
+      			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tuebingen.uni.sfs.germanet</groupId>

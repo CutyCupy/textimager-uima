@@ -22,22 +22,21 @@
 		<dependency>
 			<groupId>org.hucompute.textimager.uima</groupId>
 			<artifactId>textimager-uima-types</artifactId>
-			<version>0.0.1</version>
-		</dependency>
+			</dependency>
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl</artifactId>
-			<version>1.8.0</version>
+      			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl</artifactId>
-			<version>1.8.0</version>
+      			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.ner-asl</artifactId>
-			<version>1.8.0</version>
+      			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.heideltime</groupId>
@@ -47,7 +46,7 @@
 		<dependency>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.dictionaryannotator-asl</artifactId>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<version>1.8.0</version>
+      			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 	            <groupId>org.apache.uima</groupId>

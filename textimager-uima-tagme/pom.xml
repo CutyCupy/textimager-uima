@@ -27,7 +27,6 @@
 	</repositories>
 
 	<dependencies>
-		<!-- Tag Me dependencies Start -->
 		<dependency>
 			<groupId>com.martiansoftware</groupId>
 			<artifactId>jsap</artifactId>
