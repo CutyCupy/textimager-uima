@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.hucompute.textimager.uima</groupId>
 		<artifactId>textimager-uima</artifactId>
-		<version>0.0.1</version>
+    <version>${uima.version}</version>
 	</parent>
 	<artifactId>textimager-uima-HUComputeNER</artifactId>
 	
@@ -22,6 +22,7 @@
 		<dependency>
 			<groupId>org.hucompute.textimager.uima</groupId>
 			<artifactId>textimager-uima-types</artifactId>
+    <version>${uima.version}</version>
 			</dependency>
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>

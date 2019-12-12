@@ -18,9 +18,9 @@ import org.apache.uima.resource.ResourceInitializationException;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Heading;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Paragraph;
-import de.tudarmstadt.ukp.dkpro.core.io.pdf.Pdf2CasConverter;
-import de.tudarmstadt.ukp.dkpro.core.io.pdf.SubstitutionTrieParser;
-import de.tudarmstadt.ukp.dkpro.core.io.pdf.Trie;
+import de.tudarmstadt.ukp.dkpro.core.io.pdf.internal.Pdf2CasConverter;
+import de.tudarmstadt.ukp.dkpro.core.io.pdf.internal.SubstitutionTrieParser;
+import de.tudarmstadt.ukp.dkpro.core.io.pdf.internal.Trie;
 
 /**
  * Collection reader for PDF files. Uses simple heuristics to detect headings and paragraphs.

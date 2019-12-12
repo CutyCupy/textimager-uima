@@ -23,8 +23,9 @@ import org.apache.uima.resource.ResourceInitializationException;
 import com.github.jfasttext.JFastText;
 import com.github.jfasttext.JFastText.ProbLabel;
 
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PR;
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.V;
+//import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.PR;
+//import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.V;
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.*;
 import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.CasConfigurableProviderBase;
 import de.tudarmstadt.ukp.dkpro.core.api.resources.ModelProviderBase;
@@ -203,7 +204,7 @@ public class VerbsDisambiguation extends JCasAnnotator_ImplBase{
 					continue;
 				}
 
-				if(token.getPos().getClass() == V.class){
+				if(token.getPos().getClass() == POS_VERB.class){
 					
 					if(gnet.getLexUnits(lemma, WordCategory.verben).isEmpty()){
 						WordSense sense = new WordSense(aJCas, token.getBegin(), token.getEnd());
@@ -212,7 +213,7 @@ public class VerbsDisambiguation extends JCasAnnotator_ImplBase{
 					}
 					else if(eindeutigReflexiv.contains(lemma)){
 						boolean containsPRF = false;
-						for (PR pr: JCasUtil.selectCovered(PR.class,sentence)) {
+						for (POS_PRON pr: JCasUtil.selectCovered(POS_PRON.class,sentence)) {
 							if(pr.getPosValue().equals("PRF") && lemma.contains(JCasUtil.selectCovered(Dependency.class, pr).get(0).getGovernor().getLemma().getValue()))
 							{
 								containsPRF = true;

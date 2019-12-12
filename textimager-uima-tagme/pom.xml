@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.hucompute.textimager.uima</groupId>
 		<artifactId>textimager-uima</artifactId>
-		<version>0.0.1</version>
+    <version>${uima.version}</version>
 	</parent>
 	<artifactId>textimager-uima-tagme</artifactId>
 
@@ -197,7 +197,7 @@
 		<dependency>
 			<groupId>org.hucompute.textimager.uima</groupId>
 			<artifactId>textimager-uima-types</artifactId>
-			<version>0.0.1</version>
+    <version>${uima.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jsoup</groupId>
@@ -212,8 +212,8 @@
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.testing-asl</artifactId>
-			<scope>test</scope>
-			<version>1.8.0</version>
+
+    <version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.uima</groupId>

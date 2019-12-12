@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.hucompute.textimager.uima</groupId>
     <artifactId>textimager-uima</artifactId>
-    <version>0.0.1</version>
+    <version>${uima.version}</version>
   </parent>
   <artifactId>textimager-uima-base-annotators</artifactId>
 

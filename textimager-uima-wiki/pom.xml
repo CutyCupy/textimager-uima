@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.hucompute.textimager.uima</groupId>
 		<artifactId>textimager-uima</artifactId>
-		<version>0.0.22</version>
+		<version>${uima.version}</version>
 	</parent>
 	<artifactId>textimager-uima-wiki</artifactId>
 	
@@ -42,7 +42,8 @@
 		<dependency>
 			<groupId>org.hucompute.textimager.uima</groupId>
 			<artifactId>textimager-uima-types</artifactId>
-			</dependency>
+			<version>${uima.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
@@ -62,7 +63,7 @@
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.io.xmi-asl</artifactId>
-			<version>1.8.0</version>
+    <version>${dkpro.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

@@ -5,11 +5,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.hucompute.textimager.uima</groupId>
 	<artifactId>textimager-uima</artifactId>
-	<version>0.0.22</version>
 	<name>TextImager UIMA</name>
 	<properties>
 		<dkpro.version>1.10.0</dkpro.version>
+		<uima.version>0.0.22</uima.version>
 	</properties>
+	<version>${uima.version}</version>
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -76,7 +77,7 @@
 			<dependency>
 				<groupId>textimager-uima-types.org.hucompute.textimager.uima</groupId>
 				<artifactId>textimager-uima-types</artifactId>
-				<version>0.0.22</version>
+				<version>${uima.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.dkpro.core</groupId>
