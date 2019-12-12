@@ -212,8 +212,7 @@
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.testing-asl</artifactId>
-
-    <version>${dkpro.version}</version>
+    		<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.uima</groupId>
