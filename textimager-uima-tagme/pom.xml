@@ -5,20 +5,27 @@
 	<parent>
 		<groupId>org.hucompute.textimager.uima</groupId>
 		<artifactId>textimager-uima</artifactId>
-    <version>${uima.version}</version>
+		<version>${uima.version}</version>
 	</parent>
 	<artifactId>textimager-uima-tagme</artifactId>
+
 
 	<build>
 		<plugins>
 			<plugin>
-				
-					<groupId>org.apache.maven.plugins</groupId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
-
 	<repositories>
 		<repository>
 			<id>jitpack.io</id>
@@ -197,7 +204,7 @@
 		<dependency>
 			<groupId>org.hucompute.textimager.uima</groupId>
 			<artifactId>textimager-uima-types</artifactId>
-    <version>${uima.version}</version>
+			<version>${uima.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jsoup</groupId>
@@ -212,7 +219,7 @@
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.testing-asl</artifactId>
-    		<version>${dkpro.version}</version>
+			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.uima</groupId>

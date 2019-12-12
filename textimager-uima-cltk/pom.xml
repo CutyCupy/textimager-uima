@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.hucompute.textimager.uima</groupId>
     <artifactId>textimager-uima</artifactId>
-    <version>0.0.1</version>
+    <version>${uima.version}</version>
   </parent>
   <artifactId>textimager-uima-cltk</artifactId>
 
@@ -11,28 +11,28 @@
 		<dependency>
 			<groupId>org.hucompute.textimager.uima</groupId>
 			<artifactId>textimager-uima-base-annotators</artifactId>
-			<version>0.0.1</version>
+    <version>${uima.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.testing-asl</artifactId>
 			<scope>test</scope>
-			<version>1.9.0</version>
+    <version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.ner-asl</artifactId>
-			<version>1.9.0</version>
+    <version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.syntax-asl</artifactId>
-			<version>1.9.0</version>
+    <version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.tokit-asl</artifactId>
-			<version>1.9.0</version>
+    <version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.json</groupId>
@@ -44,9 +44,17 @@
 	<build>
 		<plugins>
 			<plugin>
-        		<groupId>maven-assembly</groupId>
-		        <artifactId>maven-assembly-plugin</artifactId>
-        	</plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+			</plugin>
 		</plugins>
 	</build>
 </project>

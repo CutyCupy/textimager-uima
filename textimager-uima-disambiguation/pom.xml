@@ -1,38 +1,44 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.hucompute.textimager.uima</groupId>
 		<artifactId>textimager-uima</artifactId>
-    <version>${uima.version}</version>
+		<version>${uima.version}</version>
 	</parent>
 	<build>
 		<plugins>
-		
 			<plugin>
-        		
-					<groupId>org.apache.maven.plugins</groupId>
-        		<artifactId>maven-assembly-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
 			</plugin>
 		</plugins>
-	
 	</build>
 	<artifactId>textimager-uima-disambiguation</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.syntax-asl</artifactId>
-      			<version>${dkpro.version}</version>
+			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-		    <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-		    <artifactId>de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl</artifactId>
-		    <version>${dkpro.version}</version>
+			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl</artifactId>
+			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.semantics-asl</artifactId>
-      			<version>${dkpro.version}</version>
+			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.vinhkhuc</groupId>
@@ -43,7 +49,7 @@
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.testing-asl</artifactId>
 			<scope>test</scope>
-      			<version>${dkpro.version}</version>
+			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tuebingen.uni.sfs.germanet</groupId>
@@ -51,12 +57,12 @@
 			<version>13.1.0</version>
 		</dependency>
 		<dependency>
-	            <groupId>org.apache.uima</groupId>
-	            <artifactId>uimafit-core</artifactId>
-	        </dependency>
-	        <dependency>
-	            <groupId>org.apache.uima</groupId>
-	            <artifactId>uimaj-core</artifactId>
-	        </dependency>
+			<groupId>org.apache.uima</groupId>
+			<artifactId>uimafit-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.uima</groupId>
+			<artifactId>uimaj-core</artifactId>
+		</dependency>
 	</dependencies>
 </project>
