@@ -11,8 +11,8 @@ import org.apache.uima.jcas.JCas;
 import org.hucompute.services.type.Language;
 import org.junit.Test;
 
-import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
+import org.dkpro.core.api.metadata.type.DocumentMetaData;
+import org.dkpro.core.api.segmentation.type.Sentence;
 
 import static org.junit.Assert.*;
 

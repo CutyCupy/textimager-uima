@@ -9,7 +9,7 @@ import org.apache.uima.fit.pipeline.SimplePipeline;
 import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
-import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
+import org.dkpro.core.api.metadata.type.DocumentMetaData;
 
 import static org.junit.Assert.*;
 

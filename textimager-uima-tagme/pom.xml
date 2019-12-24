@@ -217,8 +217,8 @@
 			<version>20180813</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.testing-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-testing-asl</artifactId>
 			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>

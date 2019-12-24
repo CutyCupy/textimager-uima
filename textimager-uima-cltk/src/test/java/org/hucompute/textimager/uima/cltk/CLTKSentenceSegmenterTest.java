@@ -11,7 +11,7 @@ import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
+import org.dkpro.core.api.segmentation.type.Sentence;
 
 public class CLTKSentenceSegmenterTest {
 	@Test

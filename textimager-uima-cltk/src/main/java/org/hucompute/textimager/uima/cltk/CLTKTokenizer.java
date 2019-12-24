@@ -5,7 +5,7 @@ import org.apache.uima.jcas.JCas;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.segmentation.type.Token;
 
 public class CLTKTokenizer extends CLTKBase {
 	@Override

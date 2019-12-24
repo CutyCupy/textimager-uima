@@ -31,19 +31,19 @@ import static org.apache.uima.util.Level.INFO;
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.Type;
 
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.morph.Morpheme;
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
-import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
-import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.CasConfigurableProviderBase;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.MappingProvider;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.MappingProviderFactory;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ModelProviderBase;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
-import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
+import org.dkpro.core.api.lexmorph.type.morph.Morpheme;
+import org.dkpro.core.api.lexmorph.type.pos.POS;
+import org.dkpro.core.api.ner.type.NamedEntity;
+import org.dkpro.core.api.parameter.ComponentParameters;
+import org.dkpro.core.api.resources.CasConfigurableProviderBase;
+import org.dkpro.core.api.resources.MappingProvider;
+import org.dkpro.core.api.resources.MappingProviderFactory;
+import org.dkpro.core.api.resources.ModelProviderBase;
+import org.dkpro.core.api.resources.ResourceUtils;
+import org.dkpro.core.api.segmentation.type.Lemma;
+import org.dkpro.core.api.segmentation.type.Sentence;
+import org.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.ner.type.NamedEntity;
 
 import ixa.kaflib.Entity;
 import ixa.kaflib.KAFDocument;
@@ -53,12 +53,12 @@ import ixa.kaflib.WF;
 
 @TypeCapability(
 		inputs = {
-				"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token",
-				"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence"},
+				"org.dkpro.core.api.segmentation.type.Token",
+				"org.dkpro.core.api.segmentation.type.Sentence"},
 		outputs = {
-				"de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS",
-				"de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.Lemma",
-				"de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.morph.Morpheme"})
+				"org.dkpro.core.api.lexmorph.type.pos.POS",
+				"org.dkpro.core.api.lexmorph.type.pos.Lemma",
+				"org.dkpro.core.api.lexmorph.type.morph.Morpheme"})
 public class OpenerProjectPOSTagger  extends JCasAnnotator_ImplBase {
 
     /**

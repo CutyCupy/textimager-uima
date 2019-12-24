@@ -7,10 +7,10 @@ import org.apache.uima.jcas.JCas;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.lexmorph.type.pos.POS;
+import org.dkpro.core.api.segmentation.type.Lemma;
+import org.dkpro.core.api.segmentation.type.Sentence;
+import org.dkpro.core.api.segmentation.type.Token;
 
 public class JSONReader extends JCasAnnotator_ImplBase{
 

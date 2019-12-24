@@ -16,7 +16,7 @@ import org.apache.uima.resource.ResourceInitializationException;
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
 
-import de.tudarmstadt.ukp.dkpro.core.api.io.JCasFileWriter_ImplBase;
+import org.dkpro.core.api.io.JCasFileWriter_ImplBase;
 
 public abstract class BaseEmbeddingsWriter extends JCasFileWriter_ImplBase{
 	

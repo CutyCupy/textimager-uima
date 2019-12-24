@@ -1,6 +1,6 @@
 package org.hucompute.textimager.uima.uaic;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
+import org.dkpro.core.api.segmentation.type.Lemma;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.fit.descriptor.TypeCapability;
@@ -20,7 +20,7 @@ import java.util.Set;
  * @author Dinu Ganea
  */
 @TypeCapability(outputs = {
-        "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma"
+        "org.dkpro.core.api.segmentation.type.Lemma"
 })
 public class Lemmatizer extends JCasAnnotator_ImplBase {
 

@@ -1,6 +1,6 @@
 package org.hucompute.textimager.uima.uaic;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
+import org.dkpro.core.api.segmentation.type.Lemma;
 import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.fit.factory.JCasFactory;

@@ -12,7 +12,7 @@ import org.apache.uima.jcas.JCas;
 import org.hucompute.textimager.uima.cltk.CLTKTokenizer;
 import org.junit.Test;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.segmentation.type.Token;
 
 public class CLTKTokenizerTest {
 	@Test

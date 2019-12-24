@@ -20,33 +20,33 @@
 
     <dependencies>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-            <artifactId>de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl</artifactId>
+            <groupId>org.dkpro.core</groupId>
+            <artifactId>dkpro-core-stanfordnlp-gpl</artifactId>
             <version>${dkpro.version}</version>
         </dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-            <artifactId>de.tudarmstadt.ukp.dkpro.core.languagetool-asl</artifactId>
+            <groupId>org.dkpro.core</groupId>
+            <artifactId>dkpro-core-languagetool-asl</artifactId>
             <version>${dkpro.version}</version>
         </dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <groupId>org.dkpro.core</groupId>
             <artifactId>
-                de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl
+                dkpro-core-api-lexmorph-asl
             </artifactId>
             <version>${dkpro.version}</version>
         </dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <groupId>org.dkpro.core</groupId>
             <artifactId>
-                de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl
+                dkpro-core-api-segmentation-asl
             </artifactId>
             <version>${dkpro.version}</version>
         </dependency>
         <dependency>
-            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <groupId>org.dkpro.core</groupId>
             <artifactId>
-                de.tudarmstadt.ukp.dkpro.core.testing-asl
+                dkpro-core-testing-asl
             </artifactId>
             <scope>test</scope>
             <version>${dkpro.version}</version>

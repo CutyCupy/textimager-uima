@@ -28,44 +28,44 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.metadata-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-api-metadata-asl</artifactId>
       			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.parameter-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-api-parameter-asl</artifactId>
       			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.io.tei-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-io-tei-asl</artifactId>
       			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.io.pdf-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-io-pdf-asl</artifactId>
       			<version>${dkpro.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.io.text-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-io-text-asl</artifactId>
       			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.io.tcf-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-io-tcf-asl</artifactId>
       			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.io.conll-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-io-conll-asl</artifactId>
       			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.io.bincas-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-io-bincas-asl</artifactId>
       			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
@@ -79,23 +79,23 @@
     <version>${uima.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.io.html-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-io-html-asl</artifactId>
       			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.resources-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-api-resources-asl</artifactId>
       			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-		    <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-		    <artifactId>de.tudarmstadt.ukp.dkpro.core.io.xml-asl</artifactId>
+		    <groupId>org.dkpro.core</groupId>
+		    <artifactId>dkpro-core-io-xml-asl</artifactId>
       			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-		    <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-		    <artifactId>de.tudarmstadt.ukp.dkpro.core.io.xmi-asl</artifactId>
+		    <groupId>org.dkpro.core</groupId>
+		    <artifactId>dkpro-core-io-xmi-asl</artifactId>
       			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>

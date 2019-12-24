@@ -46,10 +46,10 @@ import org.apache.uima.fit.descriptor.ResourceMetaData;
 import org.apache.uima.fit.descriptor.TypeCapability;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
-import de.tudarmstadt.ukp.dkpro.core.api.io.JCasResourceCollectionReader_ImplBase;
-import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
-//import de.tudarmstadt.ukp.dkpro.core.api.parameter.MimeTypes;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.CompressionUtils;
+import org.dkpro.core.api.io.JCasResourceCollectionReader_ImplBase;
+import org.dkpro.core.api.parameter.ComponentParameters;
+//import org.dkpro.core.api.parameter.MimeTypes;
+import org.dkpro.core.api.resources.CompressionUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -60,10 +60,10 @@ import org.jsoup.select.NodeVisitor;
 
 import com.ibm.icu.text.CharsetDetector;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Div;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Heading;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Paragraph;
-import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.MetaDataStringField;
+import org.dkpro.core.api.segmentation.type.Div;
+import org.dkpro.core.api.segmentation.type.Heading;
+import org.dkpro.core.api.segmentation.type.Paragraph;
+import org.dkpro.core.api.metadata.type.MetaDataStringField;
 //import eu.openminted.share.annotations.api.DocumentationResource;
 
 /**
@@ -75,10 +75,10 @@ import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.MetaDataStringField;
 //@MimeTypeCapability({MimeTypes.APPLICATION_XHTML, MimeTypes.TEXT_HTML})
 @TypeCapability(
         outputs = {
-            "de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData",
-            "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Heading",
-            "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Paragraph",
-            "de.tudarmstadt.ukp.dkpro.core.api.metadata.type.MetaDataStringField" })
+            "org.dkpro.core.api.metadata.type.DocumentMetaData",
+            "org.dkpro.core.api.segmentation.type.Heading",
+            "org.dkpro.core.api.segmentation.type.Paragraph",
+            "org.dkpro.core.api.metadata.type.MetaDataStringField" })
 public class EnhancedHtmlReader
     extends JCasResourceCollectionReader_ImplBase
 {

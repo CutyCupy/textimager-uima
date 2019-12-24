@@ -16,30 +16,26 @@
         <version>1.2.1</version>
     </dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-  		<artifactId>
-  			de.tudarmstadt.ukp.dkpro.core.languagetool-asl
+  		<groupId>org.dkpro.core</groupId>
+  		<artifactId>dkpro-core-languagetool-asl
   		</artifactId>
   		<version>${dkpro.version}</version>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-  		<artifactId>
-  			de.tudarmstadt.ukp.dkpro.core.maltparser-asl
+  		<groupId>org.dkpro.core</groupId>
+  		<artifactId>dkpro-core-maltparser-asl
   		</artifactId>
   		<version>${dkpro.version}</version>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-  		<artifactId>
-  			de.tudarmstadt.ukp.dkpro.core.io.text-asl
+  		<groupId>org.dkpro.core</groupId>
+  		<artifactId>dkpro-core-io-text-asl
   		</artifactId>
   		<version>${dkpro.version}</version>
   	</dependency>
   	<dependency>
-  		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-  		<artifactId>
-  			de.tudarmstadt.ukp.dkpro.core.io.conll-asl
+  		<groupId>org.dkpro.core</groupId>
+  		<artifactId>dkpro-core-io-conll-asl
   		</artifactId>
   		<version>${dkpro.version}</version>
   	</dependency>

@@ -28,23 +28,20 @@
 			<version>4.1.0</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>
-    		de.tudarmstadt.ukp.dkpro.core.testing-asl
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-testing-asl
     	</artifactId>
 			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>
-    		de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-api-segmentation-asl
     	</artifactId>
 			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>
-    		de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-api-lexmorph-asl
     	</artifactId>
 			<version>${dkpro.version}</version>
 		</dependency>

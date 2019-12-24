@@ -9,8 +9,8 @@ import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.jcas.JCas;
 
-import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.SegmenterBase;
+import org.dkpro.core.api.parameter.ComponentParameters;
+import org.dkpro.core.api.segmentation.SegmenterBase;
 
 /**
 * PolyglotLanguage

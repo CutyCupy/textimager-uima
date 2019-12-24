@@ -23,11 +23,11 @@ import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
-import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Paragraph;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
-import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
+import org.dkpro.core.api.metadata.type.DocumentMetaData;
+import org.dkpro.core.api.segmentation.type.Paragraph;
+import org.dkpro.core.api.segmentation.type.Sentence;
+import org.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.ner.type.NamedEntity;
 
 
 // TODO replace with new "types" category

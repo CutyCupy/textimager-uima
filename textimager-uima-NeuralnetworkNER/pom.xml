@@ -10,24 +10,24 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.testing-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-testing-asl</artifactId>
 			<scope>test</scope>
 			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.ner-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-api-ner-asl</artifactId>
 			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.syntax-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-api-syntax-asl</artifactId>
 			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.tokit-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-tokit-asl</artifactId>
 			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
@@ -36,8 +36,8 @@
 			<version>${uima.version}</version>
 		</dependency>
     <dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.io-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-api-io-asl</artifactId>
 			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>

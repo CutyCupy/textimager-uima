@@ -1,6 +1,6 @@
 package org.hucompute.textimager.uima.countAnnotator;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.segmentation.type.Token;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.descriptor.TypeCapability;
@@ -15,7 +15,7 @@ import static org.apache.uima.fit.util.JCasUtil.select;
 
 @TypeCapability(
         inputs = {
-                "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token",
+                "org.dkpro.core.api.segmentation.type.Token",
         },
         outputs = {
                 "org.hucompute.textimager.uima.countAnnotator.type.CountAnnotation"

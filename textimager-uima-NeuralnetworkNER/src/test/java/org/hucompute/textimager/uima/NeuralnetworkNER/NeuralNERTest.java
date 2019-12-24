@@ -1,7 +1,7 @@
 package org.hucompute.textimager.uima.NeuralnetworkNER;
 
-import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.ner.type.NamedEntity;
+import org.dkpro.core.api.segmentation.type.Token;
 import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.fit.factory.JCasFactory;

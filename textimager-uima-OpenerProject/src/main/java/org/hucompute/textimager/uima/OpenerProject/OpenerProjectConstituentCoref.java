@@ -33,19 +33,19 @@ import org.apache.uima.jcas.cas.FSArray;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
 
-import de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain;
-import de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink;
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
-import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
-import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.CasConfigurableProviderBase;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.MappingProvider;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.MappingProviderFactory;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
-import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.Constituent;
-import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.Constituent_Type;
+import org.dkpro.core.api.coref.type.CoreferenceChain;
+import org.dkpro.core.api.coref.type.CoreferenceLink;
+import org.dkpro.core.api.lexmorph.type.pos.POS;
+import org.dkpro.core.api.ner.type.NamedEntity;
+import org.dkpro.core.api.parameter.ComponentParameters;
+import org.dkpro.core.api.resources.CasConfigurableProviderBase;
+import org.dkpro.core.api.resources.MappingProvider;
+import org.dkpro.core.api.resources.MappingProviderFactory;
+import org.dkpro.core.api.resources.ResourceUtils;
+import org.dkpro.core.api.segmentation.type.Lemma;
+import org.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.syntax.type.constituent.Constituent;
+import org.dkpro.core.api.syntax.type.constituent.Constituent_Type;
 import ixa.kaflib.Coref;
 import ixa.kaflib.Entity;
 import ixa.kaflib.KAFDocument;
@@ -61,15 +61,15 @@ import ixa.kaflib.WF;
 
 @TypeCapability(
 		inputs = {
-				"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token",
-				"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence",
-				"de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS",
-				"de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.Lemma",
-				"de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.morph.Morpheme"},
+				"org.dkpro.core.api.segmentation.type.Token",
+				"org.dkpro.core.api.segmentation.type.Sentence",
+				"org.dkpro.core.api.lexmorph.type.pos.POS",
+				"org.dkpro.core.api.lexmorph.type.pos.Lemma",
+				"org.dkpro.core.api.lexmorph.type.morph.Morpheme"},
 		outputs = {
-				"de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceChain",
-				"de.tudarmstadt.ukp.dkpro.core.api.coref.type.CoreferenceLink",
-				"de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.Constituent"
+				"org.dkpro.core.api.coref.type.CoreferenceChain",
+				"org.dkpro.core.api.coref.type.CoreferenceLink",
+				"org.dkpro.core.api.syntax.type.constituent.Constituent"
 				})
 public class OpenerProjectConstituentCoref extends JCasAnnotator_ImplBase {
 	

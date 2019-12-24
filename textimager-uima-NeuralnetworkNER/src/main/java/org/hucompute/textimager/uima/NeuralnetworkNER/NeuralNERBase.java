@@ -22,7 +22,7 @@ import org.hucompute.textimager.uima.base.DockerRestAnnotator;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.segmentation.type.Token;
 
 /**
  * Neuralnetwork NER base class. Use the analysis engine description parameter PARAM_MODEL_NAME to choose from the four

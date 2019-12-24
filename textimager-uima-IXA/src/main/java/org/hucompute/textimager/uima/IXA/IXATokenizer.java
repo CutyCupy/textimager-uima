@@ -7,7 +7,7 @@ import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.fit.component.JCasAnnotator_ImplBase;
 import org.apache.uima.jcas.JCas;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
+import org.dkpro.core.api.segmentation.type.Sentence;
 import eus.ixa.ixa.pipe.seg.RuleBasedSegmenter;
 import eus.ixa.ixa.pipe.tok.RuleBasedTokenizer;
 import eus.ixa.ixa.pipe.tok.Token;
@@ -45,8 +45,8 @@ public class IXATokenizer extends JCasAnnotator_ImplBase {
 				for(Token token: sentence) {
 					int tokenBegin = token.startOffset();
 					int tokenEnd = tokenBegin + token.tokenLength();
-					de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token casToken = 
-							new de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token(aJCas,tokenBegin,tokenEnd);
+					org.dkpro.core.api.segmentation.type.Token casToken = 
+							new org.dkpro.core.api.segmentation.type.Token(aJCas,tokenBegin,tokenEnd);
 					casToken.addToIndexes();
 				}
 			}

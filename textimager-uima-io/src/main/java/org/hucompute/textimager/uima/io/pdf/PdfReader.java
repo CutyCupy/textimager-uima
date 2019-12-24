@@ -15,12 +15,12 @@ import org.apache.uima.fit.factory.JCasFactory;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Heading;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Paragraph;
-import de.tudarmstadt.ukp.dkpro.core.io.pdf.internal.Pdf2CasConverter;
-import de.tudarmstadt.ukp.dkpro.core.io.pdf.internal.SubstitutionTrieParser;
-import de.tudarmstadt.ukp.dkpro.core.io.pdf.internal.Trie;
+import org.dkpro.core.api.resources.ResourceUtils;
+import org.dkpro.core.api.segmentation.type.Heading;
+import org.dkpro.core.api.segmentation.type.Paragraph;
+import org.dkpro.core.io.pdf.internal.Pdf2CasConverter;
+import org.dkpro.core.io.pdf.internal.SubstitutionTrieParser;
+import org.dkpro.core.io.pdf.internal.Trie;
 
 /**
  * Collection reader for PDF files. Uses simple heuristics to detect headings and paragraphs.
@@ -29,7 +29,7 @@ import de.tudarmstadt.ukp.dkpro.core.io.pdf.internal.Trie;
  */
 @TypeCapability(
 		outputs = {
-		"de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData" })
+		"org.dkpro.core.api.metadata.type.DocumentMetaData" })
 public class PdfReader
 {
 	public static final String BUILT_IN = "<built-in>";

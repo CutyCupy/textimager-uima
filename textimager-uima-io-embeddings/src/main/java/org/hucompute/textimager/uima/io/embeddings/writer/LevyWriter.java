@@ -12,9 +12,9 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
-import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
+import org.dkpro.core.api.segmentation.type.Sentence;
+import org.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.syntax.type.dependency.Dependency;
 
 public class LevyWriter extends BaseEmbeddingsWriter{
 

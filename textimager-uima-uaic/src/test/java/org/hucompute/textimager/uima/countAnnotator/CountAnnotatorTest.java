@@ -1,8 +1,8 @@
 package org.hucompute.textimager.uima.countAnnotator;
 
-import de.tudarmstadt.ukp.dkpro.core.languagetool.LanguageToolLemmatizer;
-import de.tudarmstadt.ukp.dkpro.core.languagetool.LanguageToolSegmenter;
-import de.tudarmstadt.ukp.dkpro.core.stanfordnlp.StanfordPosTagger;
+import org.dkpro.core.languagetool.LanguageToolLemmatizer;
+import org.dkpro.core.languagetool.LanguageToolSegmenter;
+import org.dkpro.core.stanfordnlp.StanfordPosTagger;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.fit.factory.JCasFactory;
 import org.apache.uima.fit.pipeline.SimplePipeline;

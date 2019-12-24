@@ -14,10 +14,10 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.descriptor.TypeCapability;
 import org.apache.uima.jcas.JCas;
 
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.morph.MorphologicalFeatures;
-import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.SegmenterBase;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.lexmorph.type.morph.MorphologicalFeatures;
+import org.dkpro.core.api.parameter.ComponentParameters;
+import org.dkpro.core.api.segmentation.SegmenterBase;
+import org.dkpro.core.api.segmentation.type.Token;
 import morphemeAnnotation.type.MorphemeAnnotation;
 
 /**
@@ -32,8 +32,8 @@ import morphemeAnnotation.type.MorphemeAnnotation;
 * UIMA-Token is needed as input to create POS.
 * UIMA-Standard is used to represent the final MorphologyAnnotation.*/
 @TypeCapability(
-		inputs = {"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token", "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence"},
-		outputs = {"de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity"})
+		inputs = {"org.dkpro.core.api.segmentation.type.Token", "org.dkpro.core.api.segmentation.type.Sentence"},
+		outputs = {"org.dkpro.core.api.ner.type.NamedEntity"})
 public class PolyglotMorphology  extends SegmenterBase {
 	
 	/**

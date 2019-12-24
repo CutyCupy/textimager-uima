@@ -1,7 +1,7 @@
 package org.hucompute.textimager.uima.marmot;
 
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
-import static de.tudarmstadt.ukp.dkpro.core.testing.AssertAnnotations.assertPOS;
+import static org.dkpro.core.testing.AssertAnnotations.assertPOS;
 
 import org.apache.uima.UIMAException;
 import org.apache.uima.fit.factory.AggregateBuilder;
@@ -11,9 +11,9 @@ import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.lexmorph.type.pos.POS;
+import org.dkpro.core.api.segmentation.type.Sentence;
+import org.dkpro.core.api.segmentation.type.Token;
 
 public class MarMoTTaggerTest {
 

@@ -10,7 +10,7 @@ import org.apache.uima.fit.pipeline.SimplePipeline;
 import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
-import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
+import org.dkpro.core.api.ner.type.NamedEntity;
 
 /**
 * PolyglotNamedEntityTest

@@ -16,11 +16,11 @@ import org.apache.uima.resource.ResourceInitializationException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import de.tudarmstadt.ukp.dkpro.core.api.io.IobDecoder;
-import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
-import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.MappingProvider;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.io.IobDecoder;
+import org.dkpro.core.api.ner.type.NamedEntity;
+import org.dkpro.core.api.parameter.ComponentParameters;
+import org.dkpro.core.api.resources.MappingProvider;
+import org.dkpro.core.api.segmentation.type.Token;
 
 /**
  * Neuralnetwork NER implementation class.
