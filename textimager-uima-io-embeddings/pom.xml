@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.hucompute.textimager.uima</groupId>
 		<artifactId>textimager-uima</artifactId>
-		<version>0.0.1</version>
+		<version>${uima.version}</version>
 	</parent>
 	<artifactId>textimager-uima-io-embeddings</artifactId>
 
@@ -12,13 +12,13 @@
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.io-asl</artifactId>
-			<version>1.8.0</version>
+			<version>${dkpro.version}</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.syntax-asl</artifactId>
-			<version>1.8.0</version>
+			<version>${dkpro.version}</version>
 		</dependency>
 
 		<dependency>
@@ -30,7 +30,24 @@
 		<dependency>
 			<groupId>org.hucompute.services</groupId>
 			<artifactId>services-types</artifactId>
-			<version>0.0.1</version>
+			<version>${uima.version}</version>
 		</dependency>
 	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>
