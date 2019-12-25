@@ -31,6 +31,12 @@
 			<id>jitpack.io</id>
 			<url>https://jitpack.io</url>
 		</repository>
+
+		<repository>
+			<id>github</id>
+			<name>GitHub cutycupy Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/cutycupy/textimager-uima</url>
+		</repository>
 	</repositories>
 
 	<dependencies>

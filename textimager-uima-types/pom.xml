@@ -45,11 +45,4 @@
 		</dependency>
 	</dependencies>
 
-	<distributionManagement>
-		<repository>
-			<id>github</id>
-			<name>GitHub cutycupy Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/cutycupy/textimager-uima/textimager-uima-types</url>
-		</repository>
-	</distributionManagement>
 </project>

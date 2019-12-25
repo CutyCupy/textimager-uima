@@ -18,18 +18,17 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
-
-import org.dkpro.core.api.lexmorph.type.pos.POS;
 import org.dkpro.core.api.parameter.ComponentParameters;
 import org.dkpro.core.api.resources.CasConfigurableProviderBase;
 import org.dkpro.core.api.resources.MappingProvider;
 import org.dkpro.core.api.resources.MappingProviderFactory;
 import org.dkpro.core.api.resources.ResourceUtils;
-import org.dkpro.core.api.segmentation.type.Lemma;
-import org.dkpro.core.api.segmentation.type.Sentence;
-import org.dkpro.core.api.segmentation.type.Token;
+
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import eus.ixa.ixa.pipe.lemma.StatisticalLemmatizer;
-import eus.ixa.ixa.pipe.pos.Morpheme;
 import eus.ixa.ixa.pipe.pos.Resources;
 import eus.ixa.ixa.pipe.pos.StatisticalTagger;
 
@@ -49,23 +48,25 @@ public class IXAPOS extends JCasAnnotator_ImplBase {
     protected String variant;
 
     /**
-     * Load the model from this location instead of locating the model automatically.
+     * Load the model from this location instead of locating the model
+     * automatically.
      */
     public static final String PARAM_MODEL_LOCATION = ComponentParameters.PARAM_MODEL_LOCATION;
     @ConfigurationParameter(name = PARAM_MODEL_LOCATION, mandatory = false)
     protected String modelLocation;
 
     /**
-     * Load the part-of-speech tag to UIMA type mapping from this location instead of locating the
-     * mapping automatically.
+     * Load the part-of-speech tag to UIMA type mapping from this location instead
+     * of locating the mapping automatically.
      */
     public static final String PARAM_POS_MAPPING_LOCATION = ComponentParameters.PARAM_POS_MAPPING_LOCATION;
     @ConfigurationParameter(name = PARAM_POS_MAPPING_LOCATION, mandatory = false)
     protected String posMappingLocation;
 
     /**
-     * Use the {@link String#intern()} method on tags. This is usually a good idea to avoid spaming
-     * the heap with thousands of strings representing only a few different tags.
+     * Use the {@link String#intern()} method on tags. This is usually a good idea
+     * to avoid spaming the heap with thousands of strings representing only a few
+     * different tags.
      *
      * Default: {@code true}
      */
@@ -86,99 +87,90 @@ public class IXAPOS extends JCasAnnotator_ImplBase {
     private MappingProvider posMappingProvider;
 
     @Override
-    public void initialize(UimaContext aContext)
-        throws ResourceInitializationException
-    {
-        super.initialize(aContext);
+    public void initialize(UimaContext aContext) throws ResourceInitializationException {
+	super.initialize(aContext);
 
-        modelProvider = new CasConfigurableProviderBase<File>()
-        {
-            {
-                setContextObject(IXAPOS.this);
+	modelProvider = new CasConfigurableProviderBase<File>() {
+	    {
+		setContextObject(IXAPOS.this);
 
-                setDefault(ARTIFACT_ID, "${groupId}.IXA-model-tagger-${language}-${variant}");
-                setDefault(LOCATION, "classpath:org/hucompute/textimager/uima/IXA/lib/"
-                        + "tagger-${variant}.model");
-                setDefault(VARIANT, "default");
+		setDefault(ARTIFACT_ID, "${groupId}.IXA-model-tagger-${language}-${variant}");
+		setDefault(LOCATION, "classpath:org/hucompute/textimager/uima/IXA/lib/" + "tagger-${variant}.model");
+		setDefault(VARIANT, "default");
 
-                setOverride(LOCATION, modelLocation);
-                setOverride(LANGUAGE, language);
-                setOverride(VARIANT, variant);
-            }
+		setOverride(LOCATION, modelLocation);
+		setOverride(LANGUAGE, language);
+		setOverride(VARIANT, variant);
+	    }
 
-            @Override
-            protected File produceResource(URL aUrl)
-                throws IOException
-            {
-                return ResourceUtils.getUrlAsFile(aUrl, true);
-            }
-        };
+	    @Override
+	    protected File produceResource(URL aUrl) throws IOException {
+		return ResourceUtils.getUrlAsFile(aUrl, true);
+	    }
+	};
 
-        
-		if(posMappingLocation == null) 
-			posMappingLocation="classpath:/org/hucompute/textimager/uima/IXA/lib/pos-default.map";
-        posMappingProvider = MappingProviderFactory.createPosMappingProvider(posMappingLocation,
-                language, modelProvider);
+	if (posMappingLocation == null)
+	    posMappingLocation = "classpath:/org/hucompute/textimager/uima/IXA/lib/pos-default.map";
+	posMappingProvider = MappingProviderFactory.createPosMappingProvider(posMappingLocation, language,
+		modelProvider);
     }
 
-	
-	@Override
-	public void process(JCas aJCas) throws AnalysisEngineProcessException {
-		// Needed for Mapping
-		CAS cas = aJCas.getCas();
-		modelProvider.configure(cas);
-		posMappingProvider.configure(cas);
-		
-		// Get JCas text and language
-		String language = aJCas.getDocumentLanguage();
-		String originalText = aJCas.getDocumentText();
+    @Override
+    public void process(JCas aJCas) throws AnalysisEngineProcessException {
+	// Needed for Mapping
+	CAS cas = aJCas.getCas();
+	modelProvider.configure(cas);
+	posMappingProvider.configure(cas);
 
-		if(modelLocation == null) 
-			modelLocation="classpath:/org/hucompute/textimager/uima/IXA/morph-models-1.5.0/";
-		// Set Properties for pipe
-		Properties properties = new Properties();
-		properties.setProperty("language", language);
-		properties.setProperty("model", 
-				modelLocation+language+"/"+language+"-pos-perceptron.bin");
-		properties.setProperty("lemmatizerModel", 
-				modelLocation+language+"/"+language+"-lemma-perceptron.bin");
-		
-		StatisticalTagger tagger = new StatisticalTagger(properties);
-		
-		for (Sentence jCasSentence : JCasUtil.select(aJCas, Sentence.class)) {
-			List<Token> jCasTokens = selectCovered(aJCas, Token.class, jCasSentence);
-			List<String> tokenList = new ArrayList<String>();
-			for(Token jCasToken :jCasTokens) {
-				tokenList.add(jCasToken.getCoveredText());				
-			}
-			List<String> posTags = tagger.posAnnotate(tokenList.toArray(new String[] {}));
-			//List<Morpheme> morphTags = tagger.getMorphemesFromStrings(posTags, tokenList.toArray(new String[] {}));
-			
-			StatisticalLemmatizer lemmatizer= new StatisticalLemmatizer(properties);
-			List<String>  lemmaTags = lemmatizer.lemmatize(tokenList.toArray(new String[] {}), posTags.toArray(new String[] {}));
-			
-			int i = 0;
-			for(Token jCasToken :jCasTokens) {
-				int begin = jCasToken.getBegin();
-				int end = jCasToken.getEnd();
-				
-				String tag = posTags.get(i);
-				tag = Resources.getKafTagSet(tag, aJCas.getDocumentLanguage());
-	        	Type posTag = posMappingProvider.getTagType(tag);
-                POS posAnno = (POS) cas.createAnnotation(posTag, begin, end);
-                posAnno.setPosValue(tag);
-                posAnno.addToIndexes();
-				
-				Lemma lemma = new Lemma(aJCas, begin, end);
-				lemma.setValue(lemmaTags.get(i));
-				lemma.addToIndexes();
+	// Get JCas text and language
+	String language = aJCas.getDocumentLanguage();
+	String originalText = aJCas.getDocumentText();
 
-				i++;
-							
-			}
-		}
-		
-		
+	if (modelLocation == null)
+	    modelLocation = "classpath:/org/hucompute/textimager/uima/IXA/morph-models-1.5.0/";
+	// Set Properties for pipe
+	Properties properties = new Properties();
+	properties.setProperty("language", language);
+	properties.setProperty("model", modelLocation + language + "/" + language + "-pos-perceptron.bin");
+	properties.setProperty("lemmatizerModel", modelLocation + language + "/" + language + "-lemma-perceptron.bin");
+
+	StatisticalTagger tagger = new StatisticalTagger(properties);
+
+	for (Sentence jCasSentence : JCasUtil.select(aJCas, Sentence.class)) {
+	    List<Token> jCasTokens = selectCovered(aJCas, Token.class, jCasSentence);
+	    List<String> tokenList = new ArrayList<String>();
+	    for (Token jCasToken : jCasTokens) {
+		tokenList.add(jCasToken.getCoveredText());
+	    }
+	    List<String> posTags = tagger.posAnnotate(tokenList.toArray(new String[] {}));
+	    // List<Morpheme> morphTags = tagger.getMorphemesFromStrings(posTags,
+	    // tokenList.toArray(new String[] {}));
+
+	    StatisticalLemmatizer lemmatizer = new StatisticalLemmatizer(properties);
+	    List<String> lemmaTags = lemmatizer.lemmatize(tokenList.toArray(new String[] {}),
+		    posTags.toArray(new String[] {}));
+
+	    int i = 0;
+	    for (Token jCasToken : jCasTokens) {
+		int begin = jCasToken.getBegin();
+		int end = jCasToken.getEnd();
+
+		String tag = posTags.get(i);
+		tag = Resources.getKafTagSet(tag, aJCas.getDocumentLanguage());
+		Type posTag = posMappingProvider.getTagType(tag);
+		POS posAnno = (POS) cas.createAnnotation(posTag, begin, end);
+		posAnno.setPosValue(tag);
+		posAnno.addToIndexes();
+
+		Lemma lemma = new Lemma(aJCas, begin, end);
+		lemma.setValue(lemmaTags.get(i));
+		lemma.addToIndexes();
+
+		i++;
+
+	    }
 	}
+
+    }
 
 }
