@@ -75,10 +75,10 @@
 				<version>3.0.0-M1</version>
 			</dependency>
 			<dependency>
-				<groupId>textimager-uima-types.org.hucompute.textimager.uima</groupId>
-				<artifactId>textimager-uima-types</artifactId>
-				<version>${uima.version}</version>
-			</dependency>
+  <groupId>org.hucompute.textimager.uima</groupId>
+  <artifactId>textimager-uima-types</artifactId>
+  <version>${uima.version}</version>
+</dependency>
 			<dependency>
 				<groupId>org.dkpro.core</groupId>
 				<artifactId>dkpro-core</artifactId>
