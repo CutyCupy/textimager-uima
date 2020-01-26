@@ -129,7 +129,7 @@ public class TalismanePOS extends SegmenterBase {
 	    }
 	};
 
-	posMappingProvider = MappingProviderFactory.createPosMappingProvider(posMappingLocation, language,
+	posMappingProvider = MappingProviderFactory.createPosMappingProvider(null, posMappingLocation, language,
 		modelProvider);
     }
 

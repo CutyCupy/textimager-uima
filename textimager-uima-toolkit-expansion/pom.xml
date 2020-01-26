@@ -7,9 +7,8 @@
 	<parent>
 		<groupId>org.hucompute.textimager.uima</groupId>
 		<artifactId>textimager-uima</artifactId>
-		<version>${dkpro.version}</version>
+		<version>${uima.version}</version>
 	</parent>
-	<groupId>org.hucompute.textimager.uima</groupId>
 	<artifactId>textimager-uima-toolkit-expansion</artifactId>
 	<name>textimager-uima-toolkit-expansion</name>
 	<url>http://maven.apache.org</url>

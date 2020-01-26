@@ -46,7 +46,10 @@ public class IXATokenizer extends JCasAnnotator_ImplBase {
 					int tokenBegin = token.startOffset();
 					int tokenEnd = tokenBegin + token.tokenLength();
 					Token casToken = 
-							new Token(aJCas,tokenBegin,tokenEnd);
+							new Token();
+					casToken.setStartOffset(tokenBegin);
+					casToken.setTokenLength(token.tokenLength());
+					casToken.setTokenValue(token.getTokenValue());
 					casToken.addToIndexes();
 				}
 			}

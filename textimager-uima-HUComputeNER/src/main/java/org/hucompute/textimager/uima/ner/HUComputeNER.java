@@ -195,9 +195,9 @@ public class HUComputeNER extends JCasAnnotator_ImplBase {
 				    break;
 				case "MISC":
 				    if (token.getBegin() == ent.getBegin() && token.getEnd() == ent.getEnd()
-					    && (token.getPos().getClass() == ADJ.class
-						    || token.getPos().getClass() == PP.class
-						    || token.getPos().getClass() == V.class))
+					    && (token.getPos().getClass() == POS_ADJ.class
+						    || token.getPos().getClass() == POS_PROPN.class
+						    || token.getPos().getClass() == POS_VERB.class))
 					ent.removeFromIndexes();
 				    else {
 					Other other = new Other(aJCas, ent.getBegin(), ent.getEnd());

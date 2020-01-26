@@ -9,8 +9,8 @@ import org.hucompute.textimager.uima.type.category.CategoryCoveredTagged;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import org.dkpro.core.api.segmentation.type.Paragraph;
-import org.dkpro.core.api.segmentation.type.Token;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Paragraph;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 
 public class FastSenseENImplementation {
 	public JSONObject buildJSON(JCas aJCas) {

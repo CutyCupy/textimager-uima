@@ -13,14 +13,14 @@ import org.apache.uima.jcas.JCas;
 import org.hucompute.textimager.uima.type.category.CategoryCoveredTagged;
 import org.junit.Test;
 
-import org.dkpro.core.api.lexmorph.type.pos.POS;
-import org.dkpro.core.api.segmentation.type.Paragraph;
-import org.dkpro.core.api.segmentation.type.Token;
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Paragraph;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 
 public class FastSenseTest {
 	@Test
 	public void fastSenseENTest() throws UIMAException{
-		/*JCas cas = JCasFactory.createText("Hello World !");
+		JCas cas = JCasFactory.createText("Hello World !");
 		cas.setDocumentLanguage("en");
 
 		POS pos1 = new POS(cas, 0, 5);
@@ -65,7 +65,7 @@ public class FastSenseTest {
 
 		String[] casUrls = (String[]) JCasUtil.select(cas, CategoryCoveredTagged.class).stream().map(s -> new String(s.getValue())).toArray(String[]::new);
 		
-		assertArrayEquals(urls, casUrls);*/
+		assertArrayEquals(urls, casUrls);
 		
 		assertEquals(1, 1);
 	}
