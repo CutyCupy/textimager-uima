@@ -120,7 +120,7 @@ public class OpenerProjectConstituentCoref extends JCasAnnotator_ImplBase {
 
 	if (constituentMappingLocation == null)
 	    constituentMappingLocation = "classpath:/org/hucompute/textimager/uima/OpenerProject/lib/constituent-default.map";
-	constituentMappingProvider = MappingProviderFactory.createConstituentMappingProvider(constituentMappingLocation,
+	constituentMappingProvider = MappingProviderFactory.createConstituentMappingProvider(null, constituentMappingLocation,
 		language, modelProvider);
     }
 

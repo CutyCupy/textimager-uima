@@ -111,7 +111,7 @@ public class IXAPOS extends JCasAnnotator_ImplBase {
 
 	if (posMappingLocation == null)
 	    posMappingLocation = "classpath:/org/hucompute/textimager/uima/IXA/lib/pos-default.map";
-	posMappingProvider = MappingProviderFactory.createPosMappingProvider(posMappingLocation, language,
+	posMappingProvider = MappingProviderFactory.createPosMappingProvider(null, posMappingLocation, language,
 		modelProvider);
     }
 

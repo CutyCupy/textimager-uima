@@ -47,7 +47,7 @@ public class SpaCyTagger extends SpaCyBase {
 
 	// TODO defaults for de (stts) and en (ptb) are ok, add own language mapping
 	// later
-	mappingProvider = MappingProviderFactory.createPosMappingProvider(posMappingLocation, variant, language);
+	mappingProvider = MappingProviderFactory.createPosMappingProvider(null, posMappingLocation, variant, language);
     }
 
     @Override

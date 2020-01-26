@@ -53,6 +53,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.Constituent;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.constituent.ROOT;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
 import javanet.staxutils.IndentingXMLEventWriter;
+import org.dkpro.core.io.tei.internal.TeiConstants;
 
 /**
  * UIMA CAS consumer writing the CAS document text in TEI format.
@@ -134,24 +135,24 @@ public class TeiWriter extends JCasFileWriter_ImplBase {
 	    }
 
 	    xmlEventWriter.add(xmlef.createStartDocument());
-	    xmlEventWriter.setDefaultNamespace(TEI_NS);
-	    xmlEventWriter.add(xmlef.createStartElement(E_TEI_TEI, null, null));
+	    xmlEventWriter.setDefaultNamespace(TeiConstants.TEI_NS);
+	    xmlEventWriter.add(xmlef.createStartElement(TeiConstants.E_TEI_TEI, null, null));
 
 	    // Render header
 	    DocumentMetaData meta = DocumentMetaData.get(aJCas);
-	    xmlEventWriter.add(xmlef.createStartElement(E_TEI_HEADER, null, null));
-	    xmlEventWriter.add(xmlef.createStartElement(E_TEI_FILE_DESC, null, null));
-	    xmlEventWriter.add(xmlef.createStartElement(E_TEI_TITLE_STMT, null, null));
-	    xmlEventWriter.add(xmlef.createStartElement(E_TEI_TITLE, null, null));
+	    xmlEventWriter.add(xmlef.createStartElement(TeiConstants.E_TEI_HEADER, null, null));
+	    xmlEventWriter.add(xmlef.createStartElement(TeiConstants.E_TEI_FILE_DESC, null, null));
+	    xmlEventWriter.add(xmlef.createStartElement(TeiConstants.E_TEI_TITLE_STMT, null, null));
+	    xmlEventWriter.add(xmlef.createStartElement(TeiConstants.E_TEI_TITLE, null, null));
 	    xmlEventWriter.add(xmlef.createCharacters(meta.getDocumentTitle()));
-	    xmlEventWriter.add(xmlef.createEndElement(E_TEI_TITLE, null));
-	    xmlEventWriter.add(xmlef.createEndElement(E_TEI_TITLE_STMT, null));
-	    xmlEventWriter.add(xmlef.createEndElement(E_TEI_FILE_DESC, null));
-	    xmlEventWriter.add(xmlef.createEndElement(E_TEI_HEADER, null));
+	    xmlEventWriter.add(xmlef.createEndElement(TeiConstants.E_TEI_TITLE, null));
+	    xmlEventWriter.add(xmlef.createEndElement(TeiConstants.E_TEI_TITLE_STMT, null));
+	    xmlEventWriter.add(xmlef.createEndElement(TeiConstants.E_TEI_FILE_DESC, null));
+	    xmlEventWriter.add(xmlef.createEndElement(TeiConstants.E_TEI_HEADER, null));
 
 	    // Render text
-	    xmlEventWriter.add(xmlef.createStartElement(E_TEI_TEXT, null, null));
-	    xmlEventWriter.add(xmlef.createStartElement(E_TEI_BODY, null, null));
+	    xmlEventWriter.add(xmlef.createStartElement(TeiConstants.E_TEI_TEXT, null, null));
+	    xmlEventWriter.add(xmlef.createStartElement(TeiConstants.E_TEI_BODY, null, null));
 
 	    FSIterator<Annotation> iterator = aJCas.getAnnotationIndex().iterator();
 
@@ -176,7 +177,7 @@ public class TeiWriter extends JCasFileWriter_ImplBase {
 			// Text between current and next annotation
 			xmlEventWriter.add(xmlef.createCharacters(text.substring(pos, nextAnnot.getBegin())));
 			// Next annotation
-			xmlEventWriter.add(xmlef.createStartElement(new QName(TEI_NS, teiElement.get()),
+			xmlEventWriter.add(xmlef.createStartElement(new QName(TeiConstants.TEI_NS, teiElement.get()),
 				getAttributes(nextAnnot), null));
 
 			stack.push(cur);
@@ -202,7 +203,7 @@ public class TeiWriter extends JCasFileWriter_ImplBase {
 		else {
 		    // Text between current and next annotation
 		    xmlEventWriter.add(xmlef.createCharacters(text.substring(pos, cur.getEnd())));
-		    xmlEventWriter.add(xmlef.createEndElement(new QName(TEI_NS, teiElement.get()), null));
+		    xmlEventWriter.add(xmlef.createEndElement(new QName(TeiConstants.TEI_NS, teiElement.get()), null));
 
 		    pos = cur.getEnd();
 		    cur = stack.pop();
@@ -213,7 +214,7 @@ public class TeiWriter extends JCasFileWriter_ImplBase {
 	    if (cur != null) {
 		xmlEventWriter.add(xmlef.createCharacters(text.substring(pos, cur.getEnd())));
 		pos = cur.getEnd();
-		xmlEventWriter.add(xmlef.createEndElement(new QName(TEI_NS, getTeiTag(cur).get()), null));
+		xmlEventWriter.add(xmlef.createEndElement(new QName(TeiConstants.TEI_NS, getTeiTag(cur).get()), null));
 
 		while (!stack.isEmpty()) {
 		    cur = stack.pop();
@@ -222,7 +223,7 @@ public class TeiWriter extends JCasFileWriter_ImplBase {
 		    }
 		    xmlEventWriter.add(xmlef.createCharacters(text.substring(pos, cur.getEnd())));
 		    pos = cur.getEnd();
-		    xmlEventWriter.add(xmlef.createEndElement(new QName(TEI_NS, getTeiTag(cur).get()), null));
+		    xmlEventWriter.add(xmlef.createEndElement(new QName(TeiConstants.TEI_NS, getTeiTag(cur).get()), null));
 		}
 	    }
 
@@ -230,9 +231,9 @@ public class TeiWriter extends JCasFileWriter_ImplBase {
 		xmlEventWriter.add(xmlef.createCharacters(text.substring(pos, text.length())));
 	    }
 
-	    xmlEventWriter.add(xmlef.createEndElement(E_TEI_BODY, null));
-	    xmlEventWriter.add(xmlef.createEndElement(E_TEI_TEXT, null));
-	    xmlEventWriter.add(xmlef.createEndElement(E_TEI_TEI, null));
+	    xmlEventWriter.add(xmlef.createEndElement(TeiConstants.E_TEI_BODY, null));
+	    xmlEventWriter.add(xmlef.createEndElement(TeiConstants.E_TEI_TEXT, null));
+	    xmlEventWriter.add(xmlef.createEndElement(TeiConstants.E_TEI_TEI, null));
 	    xmlEventWriter.add(xmlef.createEndDocument());
 	} catch (Exception e) {
 	    throw new AnalysisEngineProcessException(e);
@@ -253,24 +254,24 @@ public class TeiWriter extends JCasFileWriter_ImplBase {
 	    }
 
 	    xmlEventWriter.add(xmlef.createStartDocument());
-	    xmlEventWriter.setDefaultNamespace(TEI_NS);
-	    xmlEventWriter.add(xmlef.createStartElement(E_TEI_TEI, null, null));
+	    xmlEventWriter.setDefaultNamespace(TeiConstants.TEI_NS);
+	    xmlEventWriter.add(xmlef.createStartElement(TeiConstants.E_TEI_TEI, null, null));
 
 	    // Render header
 	    DocumentMetaData meta = DocumentMetaData.get(aJCas);
-	    xmlEventWriter.add(xmlef.createStartElement(E_TEI_HEADER, null, null));
-	    xmlEventWriter.add(xmlef.createStartElement(E_TEI_FILE_DESC, null, null));
-	    xmlEventWriter.add(xmlef.createStartElement(E_TEI_TITLE_STMT, null, null));
-	    xmlEventWriter.add(xmlef.createStartElement(E_TEI_TITLE, null, null));
+	    xmlEventWriter.add(xmlef.createStartElement(TeiConstants.E_TEI_HEADER, null, null));
+	    xmlEventWriter.add(xmlef.createStartElement(TeiConstants.E_TEI_FILE_DESC, null, null));
+	    xmlEventWriter.add(xmlef.createStartElement(TeiConstants.E_TEI_TITLE_STMT, null, null));
+	    xmlEventWriter.add(xmlef.createStartElement(TeiConstants.E_TEI_TITLE, null, null));
 	    xmlEventWriter.add(xmlef.createCharacters(meta.getDocumentTitle()));
-	    xmlEventWriter.add(xmlef.createEndElement(E_TEI_TITLE, null));
-	    xmlEventWriter.add(xmlef.createEndElement(E_TEI_TITLE_STMT, null));
-	    xmlEventWriter.add(xmlef.createEndElement(E_TEI_FILE_DESC, null));
-	    xmlEventWriter.add(xmlef.createEndElement(E_TEI_HEADER, null));
+	    xmlEventWriter.add(xmlef.createEndElement(TeiConstants.E_TEI_TITLE, null));
+	    xmlEventWriter.add(xmlef.createEndElement(TeiConstants.E_TEI_TITLE_STMT, null));
+	    xmlEventWriter.add(xmlef.createEndElement(TeiConstants.E_TEI_FILE_DESC, null));
+	    xmlEventWriter.add(xmlef.createEndElement(TeiConstants.E_TEI_HEADER, null));
 
 	    // Render text
-	    xmlEventWriter.add(xmlef.createStartElement(E_TEI_TEXT, null, null));
-	    xmlEventWriter.add(xmlef.createStartElement(E_TEI_BODY, null, null));
+	    xmlEventWriter.add(xmlef.createStartElement(TeiConstants.E_TEI_TEXT, null, null));
+	    xmlEventWriter.add(xmlef.createStartElement(TeiConstants.E_TEI_BODY, null, null));
 
 	    FSIterator<Annotation> iterator = aJCas.getAnnotationIndex().iterator();
 
@@ -295,7 +296,7 @@ public class TeiWriter extends JCasFileWriter_ImplBase {
 			// Text between current and next annotation
 			xmlEventWriter.add(xmlef.createCharacters(text.substring(pos, nextAnnot.getBegin())));
 			// Next annotation
-			xmlEventWriter.add(xmlef.createStartElement(new QName(TEI_NS, teiElement.get()),
+			xmlEventWriter.add(xmlef.createStartElement(new QName(TeiConstants.TEI_NS, teiElement.get()),
 				getAttributes(nextAnnot), null));
 
 			stack.push(cur);
@@ -311,7 +312,7 @@ public class TeiWriter extends JCasFileWriter_ImplBase {
 		else {
 		    // Text between current and next annotation
 		    xmlEventWriter.add(xmlef.createCharacters(text.substring(pos, cur.getEnd())));
-		    xmlEventWriter.add(xmlef.createEndElement(new QName(TEI_NS, teiElement.get()), null));
+		    xmlEventWriter.add(xmlef.createEndElement(new QName(TeiConstants.TEI_NS, teiElement.get()), null));
 
 		    pos = cur.getEnd();
 		    cur = stack.pop();
@@ -322,7 +323,7 @@ public class TeiWriter extends JCasFileWriter_ImplBase {
 	    if (cur != null) {
 		xmlEventWriter.add(xmlef.createCharacters(text.substring(pos, cur.getEnd())));
 		pos = cur.getEnd();
-		xmlEventWriter.add(xmlef.createEndElement(new QName(TEI_NS, getTeiTag(cur).get()), null));
+		xmlEventWriter.add(xmlef.createEndElement(new QName(TeiConstants.TEI_NS, getTeiTag(cur).get()), null));
 
 		while (!stack.isEmpty()) {
 		    cur = stack.pop();
@@ -331,7 +332,7 @@ public class TeiWriter extends JCasFileWriter_ImplBase {
 		    }
 		    xmlEventWriter.add(xmlef.createCharacters(text.substring(pos, cur.getEnd())));
 		    pos = cur.getEnd();
-		    xmlEventWriter.add(xmlef.createEndElement(new QName(TEI_NS, getTeiTag(cur).get()), null));
+		    xmlEventWriter.add(xmlef.createEndElement(new QName(TeiConstants.TEI_NS, getTeiTag(cur).get()), null));
 		}
 	    }
 
@@ -339,9 +340,9 @@ public class TeiWriter extends JCasFileWriter_ImplBase {
 		xmlEventWriter.add(xmlef.createCharacters(text.substring(pos, text.length())));
 	    }
 
-	    xmlEventWriter.add(xmlef.createEndElement(E_TEI_BODY, null));
-	    xmlEventWriter.add(xmlef.createEndElement(E_TEI_TEXT, null));
-	    xmlEventWriter.add(xmlef.createEndElement(E_TEI_TEI, null));
+	    xmlEventWriter.add(xmlef.createEndElement(TeiConstants.E_TEI_BODY, null));
+	    xmlEventWriter.add(xmlef.createEndElement(TeiConstants.E_TEI_TEXT, null));
+	    xmlEventWriter.add(xmlef.createEndElement(TeiConstants.E_TEI_TEI, null));
 	    xmlEventWriter.add(xmlef.createEndDocument());
 	} catch (Exception e) {
 	    try {
@@ -359,10 +360,10 @@ public class TeiWriter extends JCasFileWriter_ImplBase {
 	if (aAnnotation instanceof Token) {
 	    Token t = (Token) aAnnotation;
 	    if (t.getPos() != null) {
-		attributes.add(xmlef.createAttribute(ATTR_TYPE, t.getPos().getPosValue()));
+		attributes.add(xmlef.createAttribute(TeiConstants.ATTR_TYPE, t.getPos().getPosValue()));
 	    }
 	    if (t.getLemma() != null) {
-		attributes.add(xmlef.createAttribute(ATTR_LEMMA, t.getLemma().getValue()));
+		attributes.add(xmlef.createAttribute(TeiConstants.ATTR_LEMMA, t.getLemma().getValue()));
 	    }
 	    if (t.getMorph() != null) {
 		attributes.add(xmlef.createAttribute("morph", t.getMorph().getValue()));
@@ -383,17 +384,17 @@ public class TeiWriter extends JCasFileWriter_ImplBase {
 
 	} else if (aAnnotation instanceof NamedEntity) {
 	    NamedEntity ne = (NamedEntity) aAnnotation;
-	    attributes.add(xmlef.createAttribute(ATTR_TYPE, ne.getValue()));
+	    attributes.add(xmlef.createAttribute(TeiConstants.ATTR_TYPE, ne.getValue()));
 	} else if (aAnnotation instanceof Constituent) {
 	    Constituent c = (Constituent) aAnnotation;
 	    // if ("ROOT".equals(c.getConstituentType())) {
 	    // System.out.println();
 	    // }
 	    if (c.getConstituentType() != null) {
-		attributes.add(xmlef.createAttribute(ATTR_TYPE, c.getConstituentType()));
+		attributes.add(xmlef.createAttribute(TeiConstants.ATTR_TYPE, c.getConstituentType()));
 	    }
 	    if (c.getSyntacticFunction() != null) {
-		attributes.add(xmlef.createAttribute(ATTR_FUNCTION, c.getSyntacticFunction()));
+		attributes.add(xmlef.createAttribute(TeiConstants.ATTR_FUNCTION, c.getSyntacticFunction()));
 	    }
 	}
 	// else if (aAnnotation instanceof Dependency) {
@@ -427,20 +428,20 @@ public class TeiWriter extends JCasFileWriter_ImplBase {
 
 	if (aAnnotation.getTypeIndexID() == Token.type) {
 	    if (cTextPattern.matcher(aAnnotation.getCoveredText()).matches()) {
-		return Optional.of(TAG_CHARACTER);
+		return Optional.of(TeiConstants.TAG_CHARACTER);
 	    }
-	    return Optional.of(TAG_WORD);
+	    return Optional.of(TeiConstants.TAG_WORD);
 	} else if (aAnnotation.getTypeIndexID() == Sentence.type) {
-	    return Optional.of(TAG_SUNIT);
+	    return Optional.of(TeiConstants.TAG_SUNIT);
 	} else if (aAnnotation.getTypeIndexID() == Paragraph.type) {
-	    return Optional.of(TAG_PARAGRAPH);
+	    return Optional.of(TeiConstants.TAG_PARAGRAPH);
 	} else if (writeConstituent && (aAnnotation instanceof ROOT)) {
 	    // We do not render ROOT nodes
 	    return Optional.empty();
 	} else if (writeConstituent && (aAnnotation instanceof Constituent)) {
-	    return Optional.of(TAG_PHRASE);
+	    return Optional.of(TeiConstants.TAG_PHRASE);
 	} else if (writeNamedEntity && (aAnnotation instanceof NamedEntity)) {
-	    return Optional.of(TAG_RS);
+	    return Optional.of(TeiConstants.TAG_RS);
 	} else {
 	    return Optional.empty();
 	}

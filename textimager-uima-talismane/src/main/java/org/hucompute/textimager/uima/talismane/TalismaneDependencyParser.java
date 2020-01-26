@@ -140,7 +140,7 @@ public class TalismaneDependencyParser extends JCasAnnotator_ImplBase {
 	    }
 	};
 
-	dependencyMappingProvider = MappingProviderFactory.createDependencyMappingProvider(dependencyMappingLocation,
+	dependencyMappingProvider = MappingProviderFactory.createDependencyMappingProvider(null, dependencyMappingLocation,
 		language, modelProvider);
     }
 

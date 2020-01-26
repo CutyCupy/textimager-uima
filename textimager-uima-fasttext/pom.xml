@@ -49,7 +49,7 @@
 		<dependency>
 			<groupId>org.hucompute.services</groupId>
 			<artifactId>services-types</artifactId>
-			<version>${uima.version}</version>
+			<version>0.0.1</version>
 		</dependency>
 	</dependencies>
 

@@ -26,10 +26,20 @@ import org.dkpro.core.api.resources.MappingProvider;
 import org.dkpro.core.dictionaryannotator.PhraseTree;
 import org.hucompute.textimager.uima.type.wikidata.WikiDataHyponym;
 import org.hucompute.textimager.uima.type.wikipedia.WikipediaLink;
+import org.hucompute.textimager.uima.type.category.*;
 
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
+import de.tudarmstadt.ukp.dkpro.core.api.ner.type.Time;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS_ADJ;
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS_ADV;
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS_CONJ;
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS_NOUN;
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS_PRON;
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS_PROPN;
+import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS_VERB;
 import de.unihd.dbs.uima.types.heideltime.Timex3;
 
 /**
@@ -242,11 +252,11 @@ public class HUComputeNER extends JCasAnnotator_ImplBase {
 				}
 
 				if (token.getBegin() == ne.getBegin() && token.getEnd() == ne.getEnd()
-					&& (token.getPos().getClass() == ADJ.class
-						|| token.getPos().getClass() == PP.class
-						|| token.getPos().getClass() == V.class
-						|| token.getPos().getClass() == CONJ.class
-						|| token.getPos().getClass() == ADV.class)) {
+					&& (token.getPos().getClass() == POS_ADJ.class
+						|| token.getPos().getClass() == POS_PROPN.class
+						|| token.getPos().getClass() == POS_VERB.class
+						|| token.getPos().getClass() == POS_CONJ.class
+						|| token.getPos().getClass() == POS_ADV.class)) {
 				    // System.out.println("is ADJ");
 				} else
 				    ne.addToIndexes();
