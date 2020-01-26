@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.hucompute.textimager.uima</groupId>
 		<artifactId>textimager-uima</artifactId>
-		<version>0.0.1</version>
+		<version>${uima.version}</version>
 	</parent>
 	<artifactId>textimager-uima-io-embeddings</artifactId>
 
@@ -12,7 +12,7 @@
 		<dependency>
 			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
 			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.io-asl</artifactId>
-			<version>1.8.0</version>
+			<version>${dkpro.version}</version>
 		</dependency>
 		
 		<dependency>
@@ -33,4 +33,12 @@
 			<version>0.0.1</version>
 		</dependency>
 	</dependencies>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub cutycupy Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/cutycupy/textimager-uima/textimager-uima-types</url>
+		</repository>
+	</distributionManagement>
 </project>

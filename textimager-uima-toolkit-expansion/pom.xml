@@ -5,11 +5,10 @@
   <parent>
     <groupId>org.hucompute.textimager.uima</groupId>
     <artifactId>textimager-uima</artifactId>
-    <version>0.0.1</version>
+    <version>${uima.version}</version>
   </parent>
   <groupId>org.hucompute.textimager.uima</groupId>
   <artifactId>textimager-uima-toolkit-expansion</artifactId>
-  <version>0.0.1</version>
   <name>textimager-uima-toolkit-expansion</name>
   <url>http://maven.apache.org</url>
   <properties>
@@ -25,18 +24,18 @@
     <dependency>
     	<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
     	<artifactId>de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl</artifactId>
-	    <version>1.8.0</version>
+	    <version>${dkpro.version}</version>
     </dependency>
     <dependency>
     	<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
     	<artifactId>de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl</artifactId>
-	    <version>1.8.0</version>
+	    <version>${dkpro.version}</version>
     </dependency>
     <dependency>
     	<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
     	<artifactId>de.tudarmstadt.ukp.dkpro.core.testing-asl</artifactId>
     	<scope>test</scope>
-    	<version>1.8.0</version>
+    	<version>${dkpro.version}</version>
     </dependency>
     <dependency>
 		<groupId>com.github.ixa-ehu</groupId>
@@ -44,25 +43,28 @@
 		<version>1.0.5</version>
 	</dependency>
   </dependencies>
-  <build>
-    <plugins>
-    <plugin>
-    <artifactId>maven-assembly-plugin</artifactId>
-    <version>3.1.0</version>        
-    <executions>
-    <execution>
-    <phase>package</phase>
-    <goals>  
-    <goal>single</goal>
-    </goals>
-    </execution>
-    </executions>
-    <configuration>
-    <descriptorRefs>
-    <descriptorRef>jar-with-dependencies</descriptorRef>
-    </descriptorRefs>
-    </configuration>
-    </plugin>
-    </plugins>
-    </build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub cutycupy Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/cutycupy/textimager-uima/textimager-uima-types</url>
+		</repository>
+	</distributionManagement>
 </project>
