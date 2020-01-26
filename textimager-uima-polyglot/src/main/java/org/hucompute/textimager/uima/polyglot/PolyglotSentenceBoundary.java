@@ -10,9 +10,9 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.descriptor.TypeCapability;
 import org.apache.uima.jcas.JCas;
 
-import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.SegmenterBase;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
+import org.dkpro.core.api.parameter.ComponentParameters;
+import org.dkpro.core.api.segmentation.SegmenterBase;
+import org.dkpro.core.api.segmentation.type.Sentence;
 
 /**
 * PolyglotSentenceBoundary
@@ -25,7 +25,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 * This class provide sentence detection for different languages. 
 * UIMA-Standard is used to represent the final sentence.
 */
-@TypeCapability(outputs = { "de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence" })
+@TypeCapability(outputs = { "org.dkpro.core.api.segmentation.type.Sentence" })
 public class PolyglotSentenceBoundary  extends SegmenterBase {
 	
 	/**

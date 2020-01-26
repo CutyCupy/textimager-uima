@@ -16,9 +16,9 @@ import org.apache.uima.jcas.JCas;
 import org.hucompute.services.util.XmlFormatter;
 import org.junit.Test;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
-import de.tudarmstadt.ukp.dkpro.core.testing.AssertAnnotations;
+import org.dkpro.core.api.segmentation.type.Sentence;
+import org.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.testing.AssertAnnotations;
 
 public class IXATest {
 

@@ -13,9 +13,9 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.descriptor.TypeCapability;
 import org.apache.uima.jcas.JCas;
 
-import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.SegmenterBase;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.parameter.ComponentParameters;
+import org.dkpro.core.api.segmentation.SegmenterBase;
+import org.dkpro.core.api.segmentation.type.Token;
 import tansliterationAnnotation.type.TransliterationAnnotation;
 
 /**
@@ -30,7 +30,7 @@ import tansliterationAnnotation.type.TransliterationAnnotation;
 * UIMA-Token are needed as input to create Transliteration.
 * UIMA-Standard is used to represent the final Transliteration.*/
 @TypeCapability(
-		inputs = {"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token"},
+		inputs = {"org.dkpro.core.api.segmentation.type.Token"},
 		outputs = {"tansliterationAnnotation.type.TransliterationAnnotation"})
 public class PolyglotTransliteration  extends SegmenterBase {
 	

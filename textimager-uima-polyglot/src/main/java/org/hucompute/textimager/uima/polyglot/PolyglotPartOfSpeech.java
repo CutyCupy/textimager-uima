@@ -19,16 +19,16 @@ import org.apache.uima.fit.descriptor.TypeCapability;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
-import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
-import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.CasConfigurableProviderBase;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.MappingProvider;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.MappingProviderFactory;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.SegmenterBase;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.lexmorph.type.pos.POS;
+import org.dkpro.core.api.ner.type.NamedEntity;
+import org.dkpro.core.api.parameter.ComponentParameters;
+import org.dkpro.core.api.resources.CasConfigurableProviderBase;
+import org.dkpro.core.api.resources.MappingProvider;
+import org.dkpro.core.api.resources.MappingProviderFactory;
+import org.dkpro.core.api.resources.ResourceUtils;
+import org.dkpro.core.api.segmentation.SegmenterBase;
+import org.dkpro.core.api.segmentation.type.Sentence;
+import org.dkpro.core.api.segmentation.type.Token;
 
 /**
 * PolyglotPartOfSpeech
@@ -42,8 +42,8 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 * UIMA-Token is needed as input to create POS.
 * UIMA-Standard is used to represent the final POS.*/
 @TypeCapability(
-		inputs = {"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token, de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence"},
-		outputs = {"de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS"})
+		inputs = {"org.dkpro.core.api.segmentation.type.Token, org.dkpro.core.api.segmentation.type.Sentence"},
+		outputs = {"org.dkpro.core.api.lexmorph.type.pos.POS"})
 public class PolyglotPartOfSpeech  extends SegmenterBase {
 	
 	/**

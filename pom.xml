@@ -7,8 +7,8 @@
 	<artifactId>textimager-uima</artifactId>
 	<name>TextImager UIMA</name>
 	<properties>
-		<dkpro.version>1.10.0</dkpro.version>
-		<uima.version>0.0.22</uima.version>
+		<dkpro.version>2.0.0</dkpro.version>
+		<uima.version>0.0.26</uima.version>
 	</properties>
 	<version>${uima.version}</version>
 	<build>
@@ -75,10 +75,10 @@
 				<version>3.0.0-M1</version>
 			</dependency>
 			<dependency>
-				<groupId>textimager-uima-types.org.hucompute.textimager.uima</groupId>
-				<artifactId>textimager-uima-types</artifactId>
-				<version>${uima.version}</version>
-			</dependency>
+  <groupId>org.hucompute.textimager.uima</groupId>
+  <artifactId>textimager-uima-types</artifactId>
+  <version>${uima.version}</version>
+</dependency>
 			<dependency>
 				<groupId>org.dkpro.core</groupId>
 				<artifactId>dkpro-core</artifactId>
@@ -88,25 +88,24 @@
 
 	</dependencyManagement>
 	<modules>
-		<module>textimager-uima-base-annotators</module>
-		<module>textimager-uima-marmot</module>
-		<module>textimager-uima-wiki</module>
+		<!--<module>textimager-uima-base-annotators</module>-->
+		<!--<module>textimager-uima-marmot</module>-->
+		<!--<module>textimager-uima-wiki</module> -->
 		<module>textimager-uima-types</module>
-		<module>textimager-uima-OpenerProject</module>
-		<module>textimager-uima-talismane</module>
-		<module>textimager-uima-IXA</module>
-		<module>textimager-uima-uaic</module>
-		<module>textimager-uima-io-mediawiki</module>
-		<module>textimager-uima-spacy</module>
-		<module>textimager-uima-NeuralnetworkNER</module>
-		<module>textimager-uima-cltk</module>
-		<module>textimager-uima-io</module>
-		<module>textimager-uima-fasttext</module>
-		<module>textimager-uima-tagme</module>
-		<module>textimager-uima-HUComputeNER</module>
-		<module>textimager-uima-disambiguation</module>
+		<!-- <module>textimager-uima-OpenerProject</module>-->
+		<!--<module>textimager-uima-talismane</module>-->
+		<!--<module>textimager-uima-IXA</module>-->
+		<!--<module>textimager-uima-uaic</module>-->
+		<!--<module>textimager-uima-io-mediawiki</module>-->
+		<!--<module>textimager-uima-spacy</module>-->
+		<!--<module>textimager-uima-NeuralnetworkNER</module>-->
+		<!--<module>textimager-uima-cltk</module>-->
+		<!--<module>textimager-uima-io</module>-->
+		<!--<module>textimager-uima-fasttext</module>-->
+		<!--<module>textimager-uima-tagme</module>-->
+		<!--<module>textimager-uima-HUComputeNER</module>-->
+		<!--<module>textimager-uima-disambiguation</module>-->
 	</modules>
-
 
 
 	<distributionManagement>

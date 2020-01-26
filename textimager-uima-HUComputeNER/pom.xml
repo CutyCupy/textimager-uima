@@ -12,10 +12,17 @@
 	<build>
 		<plugins>
 			<plugin>
-        		
-					<groupId>org.apache.maven.plugins</groupId>
-		        <artifactId>maven-assembly-plugin</artifactId>
-        	</plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
@@ -25,18 +32,18 @@
     <version>${uima.version}</version>
 			</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-api-lexmorph-asl</artifactId>
       			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-api-segmentation-asl</artifactId>
       			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.api.ner-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-api-ner-asl</artifactId>
       			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>
@@ -45,8 +52,8 @@
 			<version>2.2.1</version>
 		</dependency>
 		<dependency>
-			<artifactId>de.tudarmstadt.ukp.dkpro.core.dictionaryannotator-asl</artifactId>
-			<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+			<artifactId>dkpro-core-dictionaryannotator-asl</artifactId>
+			<groupId>org.dkpro.core</groupId>
       			<version>${dkpro.version}</version>
 		</dependency>
 		<dependency>

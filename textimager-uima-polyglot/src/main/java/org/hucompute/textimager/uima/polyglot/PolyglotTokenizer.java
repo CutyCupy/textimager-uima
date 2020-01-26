@@ -14,9 +14,9 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.descriptor.TypeCapability;
 import org.apache.uima.jcas.JCas;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.SegmenterBase;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.segmentation.SegmenterBase;
+import org.dkpro.core.api.segmentation.type.Sentence;
+import org.dkpro.core.api.segmentation.type.Token;
 
 /**
 * PolyglotTokenizer
@@ -30,8 +30,8 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 * UIMA-Standard is used to represent the final token.
 */
 @TypeCapability(
-		inputs = {"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence" },
-		outputs = {"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token" }
+		inputs = {"org.dkpro.core.api.segmentation.type.Sentence" },
+		outputs = {"org.dkpro.core.api.segmentation.type.Token" }
 		)
 public class PolyglotTokenizer  extends SegmenterBase {
 	

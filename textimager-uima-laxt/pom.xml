@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -102,4 +103,98 @@
 			<url>https://maven.pkg.github.com/cutycupy/textimager-uima/textimager-uima-types</url>
 		</repository>
 	</distributionManagement>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>textimager-uima</artifactId>
+        <groupId>org.hucompute.textimager.uima</groupId>
+        <version>${uima.version}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>textimager-uima-test</artifactId>
+
+    <repositories>
+        <repository>
+            <id>ukp-oss-model-releases</id>
+            <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-model-releases-local</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.dkpro.core</groupId>
+            <artifactId>dkpro-core-stanfordnlp-gpl</artifactId>
+            <version>${dkpro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dkpro.core</groupId>
+            <artifactId>dkpro-core-languagetool-asl</artifactId>
+            <version>${dkpro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dkpro.core</groupId>
+            <artifactId>
+                dkpro-core-api-lexmorph-asl
+            </artifactId>
+            <version>${dkpro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dkpro.core</groupId>
+            <artifactId>
+                dkpro-core-api-segmentation-asl
+            </artifactId>
+            <version>${dkpro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dkpro.core</groupId>
+            <artifactId>
+                dkpro-core-testing-asl
+            </artifactId>
+            <scope>test</scope>
+            <version>${dkpro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.hamcrest</groupId>
+                    <artifactId>hamcrest-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+    
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+>>>>>>> branch 'master' of https://github.com/CutyCupy/textimager-uima.git
 </project>

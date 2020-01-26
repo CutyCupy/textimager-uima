@@ -9,11 +9,11 @@ import java.util.List;
 import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.morph.Morpheme;
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.lexmorph.type.morph.Morpheme;
+import org.dkpro.core.api.lexmorph.type.pos.POS;
+import org.dkpro.core.api.segmentation.type.Lemma;
+import org.dkpro.core.api.segmentation.type.Sentence;
+import org.dkpro.core.api.segmentation.type.Token;
 import ixa.kaflib.KAFDocument;
 import ixa.kaflib.NonTerminal;
 import ixa.kaflib.Term;

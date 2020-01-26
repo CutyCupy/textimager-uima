@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -61,3 +62,55 @@
 		</repository>
 	</distributionManagement>
 </project>
+=======
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.hucompute.textimager.uima</groupId>
+    <artifactId>textimager-uima</artifactId>
+    <version>${uima.version}</version>
+  </parent>
+  <artifactId>textimager-uima-fastsense</artifactId>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.hucompute.textimager.uima</groupId>
+			<artifactId>textimager-uima-types</artifactId>
+			<version>${uima.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hucompute.textimager.uima</groupId>
+			<artifactId>textimager-uima-base-annotators</artifactId>
+			<version>${uima.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-api-syntax-asl</artifactId>
+			<version>${dkpro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.dkpro.core</groupId>
+			<artifactId>dkpro-core-testing-asl</artifactId>
+			<scope>test</scope>
+			<version>${dkpro.version}</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
+>>>>>>> branch 'master' of https://github.com/CutyCupy/textimager-uima.git

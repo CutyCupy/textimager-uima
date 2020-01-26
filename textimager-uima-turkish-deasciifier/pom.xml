@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>TextImager</groupId>
@@ -68,4 +69,62 @@
 			<url>https://maven.pkg.github.com/cutycupy/textimager-uima/textimager-uima-types</url>
 		</repository>
 	</distributionManagement>
+=======
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>TextImager</groupId>
+  <artifactId>Turkish-Deasciifier</artifactId>
+  <version>${uima.version}</version>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.dkpro.core</groupId>
+  		<artifactId>
+  			dkpro-core-languagetool-asl
+  		</artifactId>
+  		<version>${dkpro.version}</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.dkpro.core</groupId>
+  		<artifactId>dkpro-core-maltparser-asl
+  		</artifactId>
+  		<version>${dkpro.version}</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.dkpro.core</groupId>
+  		<artifactId>
+  			dkpro-core-io-text-asl
+  		</artifactId>
+  		<version>${dkpro.version}</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.dkpro.core</groupId>
+  		<artifactId>dkpro-core-io-conll-asl
+  		</artifactId>
+  		<version>${dkpro.version}</version>
+  	</dependency>
+  	<dependency>
+	  <groupId>junit</groupId>
+	  <artifactId>junit</artifactId>
+	  <version>4.12</version>
+	  <scope>test</scope>
+	</dependency> 
+  </dependencies>
+ 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+>>>>>>> branch 'master' of https://github.com/CutyCupy/textimager-uima.git
 </project>

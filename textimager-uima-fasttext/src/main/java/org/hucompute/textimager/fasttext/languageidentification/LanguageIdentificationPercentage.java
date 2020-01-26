@@ -14,11 +14,11 @@ import org.hucompute.services.type.Language;
 
 import com.github.jfasttext.JFastText;
 
-import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.CasConfigurableProviderBase;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ModelProviderBase;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
+import org.dkpro.core.api.parameter.ComponentParameters;
+import org.dkpro.core.api.resources.CasConfigurableProviderBase;
+import org.dkpro.core.api.resources.ModelProviderBase;
+import org.dkpro.core.api.resources.ResourceUtils;
+import org.dkpro.core.api.segmentation.type.Sentence;
 
 
 public class LanguageIdentificationPercentage extends JCasAnnotator_ImplBase{

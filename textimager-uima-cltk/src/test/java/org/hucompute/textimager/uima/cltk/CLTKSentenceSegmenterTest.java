@@ -14,23 +14,24 @@ import org.junit.Test;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 
 public class CLTKSentenceSegmenterTest {
-	@Test
-	public void simpleExampleLa() throws UIMAException{
-		JCas cas = JCasFactory.createText("Itaque cum M. Aurelio et P. Minidio et Cn. Cornelio ad apparationem balistarum et scorpionem reliquorumque tormentorum refectionem fui praesto et cum eis commoda accepi, quae cum primo mihi tribuisiti recognitionem, per sorosis commendationem servasti. Cum ergo eo beneficio essem obligatus, ut ad exitum vitae non haberem inopiae timorem, haec tibi scribere coepi, quod animadverti multa te aedificavisse et nunc aedificare, reliquo quoque tempore et publicorum et privatorum aedificiorum, pro amplitudine rerum gestarum ut posteris memoriae traderentur curam habiturum.");
-		cas.setDocumentLanguage("la");
-		
-		AnalysisEngineDescription cltkSentenceSegmenter = createEngineDescription(CLTKSentenceSegmenter.class,
-				CLTKSentenceSegmenter.PARAM_DOCKER_IMAGE,"textimager-cltk");
-		
-		SimplePipeline.runPipeline(cas, cltkSentenceSegmenter);
-		
-		String[] sentences = new String[] {
-				"Itaque cum M. Aurelio et P. Minidio et Cn. Cornelio ad apparationem balistarum et scorpionem reliquorumque tormentorum refectionem fui praesto et cum eis commoda accepi, quae cum primo mihi tribuisiti recognitionem, per sorosis commendationem servasti.",
-				"Cum ergo eo beneficio essem obligatus, ut ad exitum vitae non haberem inopiae timorem, haec tibi scribere coepi, quod animadverti multa te aedificavisse et nunc aedificare, reliquo quoque tempore et publicorum et privatorum aedificiorum, pro amplitudine rerum gestarum ut posteris memoriae traderentur curam habiturum."
-		};
+    @Test
+    public void simpleExampleLa() throws UIMAException {
+	JCas cas = JCasFactory.createText(
+		"Itaque cum M. Aurelio et P. Minidio et Cn. Cornelio ad apparationem balistarum et scorpionem reliquorumque tormentorum refectionem fui praesto et cum eis commoda accepi, quae cum primo mihi tribuisiti recognitionem, per sorosis commendationem servasti. Cum ergo eo beneficio essem obligatus, ut ad exitum vitae non haberem inopiae timorem, haec tibi scribere coepi, quod animadverti multa te aedificavisse et nunc aedificare, reliquo quoque tempore et publicorum et privatorum aedificiorum, pro amplitudine rerum gestarum ut posteris memoriae traderentur curam habiturum.");
+	cas.setDocumentLanguage("la");
 
-		String[] casSentences = (String[]) JCasUtil.select(cas, Sentence.class).stream().map(s -> s.getCoveredText()).toArray(String[]::new);
-		
-		assertArrayEquals(sentences, casSentences);
-	}
+	AnalysisEngineDescription cltkSentenceSegmenter = createEngineDescription(CLTKSentenceSegmenter.class,
+		CLTKSentenceSegmenter.PARAM_DOCKER_IMAGE, "textimager-cltk");
+
+	SimplePipeline.runPipeline(cas, cltkSentenceSegmenter);
+
+	String[] sentences = new String[] {
+		"Itaque cum M. Aurelio et P. Minidio et Cn. Cornelio ad apparationem balistarum et scorpionem reliquorumque tormentorum refectionem fui praesto et cum eis commoda accepi, quae cum primo mihi tribuisiti recognitionem, per sorosis commendationem servasti.",
+		"Cum ergo eo beneficio essem obligatus, ut ad exitum vitae non haberem inopiae timorem, haec tibi scribere coepi, quod animadverti multa te aedificavisse et nunc aedificare, reliquo quoque tempore et publicorum et privatorum aedificiorum, pro amplitudine rerum gestarum ut posteris memoriae traderentur curam habiturum." };
+
+	String[] casSentences = (String[]) JCasUtil.select(cas, Sentence.class).stream().map(s -> s.getCoveredText())
+		.toArray(String[]::new);
+
+	assertArrayEquals(sentences, casSentences);
+    }
 }

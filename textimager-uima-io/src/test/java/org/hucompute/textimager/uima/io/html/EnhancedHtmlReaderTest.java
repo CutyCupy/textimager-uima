@@ -13,7 +13,7 @@ import org.apache.uima.collection.CollectionReaderDescription;
 import org.apache.uima.fit.pipeline.SimplePipeline;
 import org.xml.sax.SAXException;
 
-import de.tudarmstadt.ukp.dkpro.core.io.xmi.XmiWriter;
+import org.dkpro.core.io.xmi.XmiWriter;
 
 public class EnhancedHtmlReaderTest {
     public static void main(String[] args) throws UIMAException, IOException, SAXException {

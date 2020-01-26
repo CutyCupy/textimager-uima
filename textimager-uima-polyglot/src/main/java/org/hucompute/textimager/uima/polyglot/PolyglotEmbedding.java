@@ -12,9 +12,9 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.fit.descriptor.TypeCapability;
 import org.apache.uima.jcas.JCas;
 
-import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.SegmenterBase;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import org.dkpro.core.api.parameter.ComponentParameters;
+import org.dkpro.core.api.segmentation.SegmenterBase;
+import org.dkpro.core.api.segmentation.type.Token;
 import embeddingAnnotation.type.EmbeddingAnnotation;
 
 /**
@@ -29,7 +29,7 @@ import embeddingAnnotation.type.EmbeddingAnnotation;
 * UIMA-Token are needed as input to create Embedding.
 * UIMA-Standard is used to represent the final Embedding.*/
 @TypeCapability(
-		inputs = {"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token"},
+		inputs = {"org.dkpro.core.api.segmentation.type.Token"},
 		outputs = {"sentimentAnnotation.type.EmbeddingAnnotation"})
 public class PolyglotEmbedding  extends SegmenterBase {
 	
