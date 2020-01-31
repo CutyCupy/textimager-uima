@@ -4,7 +4,8 @@
 	<parent>
 		<groupId>org.hucompute.textimager.uima</groupId>
 		<artifactId>textimager-uima</artifactId>
-		<version>0.0.2</version>
+		
+		<version>${textimager.uima.version}</version>
 	</parent>
 	<artifactId>textimager-uima-wiki</artifactId>
 	

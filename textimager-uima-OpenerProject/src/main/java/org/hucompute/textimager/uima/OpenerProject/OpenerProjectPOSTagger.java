@@ -34,12 +34,12 @@ import org.apache.uima.cas.Type;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.morph.Morpheme;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
 import de.tudarmstadt.ukp.dkpro.core.api.ner.type.NamedEntity;
-import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.CasConfigurableProviderBase;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.MappingProvider;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.MappingProviderFactory;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ModelProviderBase;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
+import org.dkpro.core.api.parameter.ComponentParameters;
+import org.dkpro.core.api.resources.CasConfigurableProviderBase;
+import org.dkpro.core.api.resources.MappingProvider;
+import org.dkpro.core.api.resources.MappingProviderFactory;
+import org.dkpro.core.api.resources.ModelProviderBase;
+import org.dkpro.core.api.resources.ResourceUtils;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
@@ -98,15 +98,6 @@ public class OpenerProjectPOSTagger  extends JCasAnnotator_ImplBase {
     @ConfigurationParameter(name = PARAM_POS_MAPPING_LOCATION, mandatory = false)
     protected String posMappingLocation;
 
-    /**
-     * Use the {@link String#intern()} method on tags. This is usually a good idea to avoid spaming
-     * the heap with thousands of strings representing only a few different tags.
-     *
-     * Default: {@code true}
-     */
-    public static final String PARAM_INTERN_TAGS = ComponentParameters.PARAM_INTERN_TAGS;
-    @ConfigurationParameter(name = PARAM_INTERN_TAGS, mandatory = false, defaultValue = "true")
-    private boolean internTags;
 
     /**
      * Log the tag set(s) when a model is loaded.
@@ -152,7 +143,7 @@ public class OpenerProjectPOSTagger  extends JCasAnnotator_ImplBase {
         
 		if(posMappingLocation == null) 
 			posMappingLocation="classpath:/org/hucompute/textimager/uima/OpenerProject/lib/pos-default.map";
-        posMappingProvider = MappingProviderFactory.createPosMappingProvider(posMappingLocation,
+        posMappingProvider = MappingProviderFactory.createPosMappingProvider(null, posMappingLocation,
                 language, modelProvider);
     }
 

@@ -22,7 +22,7 @@ import com.joliciel.talismane.tokeniser.Tokeniser;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.SegmenterBase;
+import org.dkpro.core.api.segmentation.SegmenterBase;
 
 
 @TypeCapability(

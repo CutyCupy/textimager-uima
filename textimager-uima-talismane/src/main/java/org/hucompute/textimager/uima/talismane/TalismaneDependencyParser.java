@@ -37,11 +37,11 @@ import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
-import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.CasConfigurableProviderBase;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.MappingProvider;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.MappingProviderFactory;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
+import org.dkpro.core.api.parameter.ComponentParameters;
+import org.dkpro.core.api.resources.CasConfigurableProviderBase;
+import org.dkpro.core.api.resources.MappingProvider;
+import org.dkpro.core.api.resources.MappingProviderFactory;
+import org.dkpro.core.api.resources.ResourceUtils;
 
 @TypeCapability(
 inputs = {
@@ -96,13 +96,6 @@ public class TalismaneDependencyParser extends JCasAnnotator_ImplBase{
     @ConfigurationParameter(name = PARAM_DEPENDENCY_MAPPING_LOCATION, mandatory = false)
     private String dependencyMappingLocation;
     
-    /**
-     * Use the {@link String#intern()} method on tags. This is usually a good idea to avoid
-     * spaming the heap with thousands of strings representing only a few different tags.
-     */
-    public static final String PARAM_INTERN_TAGS = ComponentParameters.PARAM_INTERN_TAGS;
-    @ConfigurationParameter(name = PARAM_INTERN_TAGS, mandatory = false, defaultValue = "true")
-    private boolean internTags;
 
     /**
      * Process anyway, even if the model relies on features that are not supported by this
@@ -147,7 +140,7 @@ public class TalismaneDependencyParser extends JCasAnnotator_ImplBase{
             }
         };
          
-        dependencyMappingProvider = MappingProviderFactory.createDependencyMappingProvider(dependencyMappingLocation,
+        dependencyMappingProvider = MappingProviderFactory.createDependencyMappingProvider(null, dependencyMappingLocation,
                 language, modelProvider);
     }
 

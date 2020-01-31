@@ -45,14 +45,14 @@ import com.joliciel.talismane.tokeniser.Tokeniser;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 
-import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.ADJ;
+import org.dkpro.core.api.lexmorph.pos.*;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS;
-import de.tudarmstadt.ukp.dkpro.core.api.parameter.ComponentParameters;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.CasConfigurableProviderBase;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.MappingProvider;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.MappingProviderFactory;
-import de.tudarmstadt.ukp.dkpro.core.api.resources.ResourceUtils;
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.SegmenterBase;
+import org.dkpro.core.api.parameter.ComponentParameters;
+import org.dkpro.core.api.resources.CasConfigurableProviderBase;
+import org.dkpro.core.api.resources.MappingProvider;
+import org.dkpro.core.api.resources.MappingProviderFactory;
+import org.dkpro.core.api.resources.ResourceUtils;
+import org.dkpro.core.api.segmentation.SegmenterBase;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma;
 
 @TypeCapability(
@@ -100,15 +100,6 @@ public class TalismanePOS extends SegmenterBase {
     @ConfigurationParameter(name = PARAM_POS_MAPPING_LOCATION, mandatory = false)
     protected String posMappingLocation;
 
-    /**
-     * Use the {@link String#intern()} method on tags. This is usually a good idea to avoid spaming
-     * the heap with thousands of strings representing only a few different tags.
-     *
-     * Default: {@code true}
-     */
-    public static final String PARAM_INTERN_TAGS = ComponentParameters.PARAM_INTERN_TAGS;
-    @ConfigurationParameter(name = PARAM_INTERN_TAGS, mandatory = false, defaultValue = "true")
-    private boolean internTags;
     
 
     /**
@@ -153,7 +144,7 @@ public class TalismanePOS extends SegmenterBase {
         };
 
 
-        posMappingProvider = MappingProviderFactory.createPosMappingProvider(posMappingLocation,
+        posMappingProvider = MappingProviderFactory.createPosMappingProvider(null, posMappingLocation,
                 language, modelProvider);
     }
 

@@ -5,10 +5,9 @@
   <parent>
     <groupId>org.hucompute.textimager.uima</groupId>
     <artifactId>textimager-uima</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${textimager.uima.version}</version>
   </parent>
   <artifactId>textimager-uima-OpenerProject</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>textimager-uima-OpenerProject</name>
   <url>http://maven.apache.org</url>
   <properties>
@@ -18,39 +17,32 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-		<artifactId>de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl</artifactId>
-		<version>1.8.0</version>
+		<groupId>org.dkpro.core</groupId>
+		<artifactId>dkpro-core-api-lexmorph-asl</artifactId>
+		</dependency>
+	<dependency>
+		<groupId>org.dkpro.core</groupId>
+		<artifactId>dkpro-core-api-segmentation-asl</artifactId>
 	</dependency>
 	<dependency>
-		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-		<artifactId>de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl</artifactId>
-		<version>1.8.0</version>
-	</dependency>
-	<dependency>
-		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-		<artifactId>de.tudarmstadt.ukp.dkpro.core.testing-asl</artifactId>
+		<groupId>org.dkpro.core</groupId>
+		<artifactId>dkpro-core-testing-asl</artifactId>
 		<scope>test</scope>
-		<version>1.8.0</version>
 	</dependency>
 	<dependency>
-    	<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-    	<artifactId>de.tudarmstadt.ukp.dkpro.core.api.ner-asl</artifactId>
-    	<version>1.8.0</version>
+		<groupId>org.dkpro.core</groupId>
+    	<artifactId>dkpro-core-api-ner-asl</artifactId>
 	</dependency>
 	<dependency>
-    	<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-    	<artifactId>de.tudarmstadt.ukp.dkpro.core.api.syntax-asl</artifactId>
-    	<version>1.8.0</version>
+		<groupId>org.dkpro.core</groupId>
+    	<artifactId>dkpro-core-api-syntax-asl</artifactId>
 	</dependency>
 	<dependency>
-    	<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
-    	<artifactId>de.tudarmstadt.ukp.dkpro.core.api.coref-asl</artifactId>
-    	<version>1.8.0</version>
+		<groupId>org.dkpro.core</groupId>
+    	<artifactId>dkpro-core-api-coref-asl</artifactId>
 	</dependency>
 	<dependency>
 		<groupId>com.github.ixa-ehu</groupId>
@@ -58,27 +50,5 @@
 		<version>1.0.5</version>
 	</dependency>
   </dependencies>
-  
-  <build>
-    <plugins>
-        <plugin>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <version>3.1.0</version>        
-            <executions>
-                <execution>
-            <phase>package</phase>
-            <goals>  
-                        <goal>single</goal>
-                    </goals>
-            </execution>
-            </executions>
-            <configuration>
-                <descriptorRefs>
-                    <descriptorRef>jar-with-dependencies</descriptorRef>
-        </descriptorRefs>
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
 
 </project>
