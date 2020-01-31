@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.hucompute.textimager.uima</groupId>
 	<artifactId>textimager-uima</artifactId>
-	<version>0.0.2</version>
+	<version>${textimager.uima.version}</version>
 	<name>TextImager UIMA</name>
 	<build>
 		<plugins>
@@ -23,6 +23,7 @@
 
 	<properties>
 		<dkpro.core.version>1.12.0</dkpro.core.version>
+		<textimager.uima.version>0.0.2</textimager.uima.version>
 	</properties>
 
 	<repositories>
@@ -76,7 +77,7 @@
 		<module>textimager-uima-wiki</module>
 		<!-- <module>textimager-uima-OpenerProject</module> -->
 		<!-- <module>textimager-uima-talismane</module> -->
-		<!-- <module>textimager-uima-IXA</module> -->
+		<module>textimager-uima-IXA</module>
 		<!-- <module>textimager-uima-uaic</module> -->
 		<!-- <module>textimager-uima-io-mediawiki</module> -->
 		<module>textimager-uima-spacy</module>
