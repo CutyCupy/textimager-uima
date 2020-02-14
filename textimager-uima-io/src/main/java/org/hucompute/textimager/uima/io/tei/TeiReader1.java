@@ -24,9 +24,8 @@ import org.dom4j.io.SAXWriter;
 import org.jaxen.JaxenException;
 import org.jaxen.XPath;
 import org.jaxen.dom4j.Dom4jXPath;
-//import org.jaxen.XPath;
-//import org.jaxen.dom4j.Dom4jXPath;
 import org.xml.sax.Attributes;
+//import org.jaxen.XPath;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 

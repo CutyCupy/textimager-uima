@@ -8,6 +8,7 @@
 		<version>${textimager.uima.version}</version>
 	</parent>
 	<artifactId>textimager-uima-types</artifactId>
+	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>

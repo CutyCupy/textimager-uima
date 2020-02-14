@@ -7,6 +7,7 @@
 		<version>${textimager.uima.version}</version>
 	</parent>
 	<artifactId>textimager-uima-heideltime</artifactId>
+	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>

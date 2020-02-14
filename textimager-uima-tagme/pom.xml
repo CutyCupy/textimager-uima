@@ -9,6 +9,7 @@
 	</parent>
 	<artifactId>textimager-uima-tagme</artifactId>
 	
+	<packaging>jar</packaging>
 	
 
 	<repositories>

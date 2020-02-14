@@ -10,6 +10,7 @@
 		<version>${textimager.uima.version}</version>
 	</parent>
 	<artifactId>textimager-uima-IXA</artifactId>
+	<packaging>jar</packaging>
 	<name>textimager-uima-IXA</name>
 	<url>http://maven.apache.org</url>
 	<properties>

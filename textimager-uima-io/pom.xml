@@ -7,12 +7,13 @@
 		<version>${textimager.uima.version}</version>
 	</parent>
 	<artifactId>textimager-uima-io</artifactId>
+	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.hucompute.textimager.uima</groupId>
 			<artifactId>textimager-uima-types</artifactId>
-			<version>${project.version}</version>
+			<version>${textimager.uima.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.dkpro.core</groupId>
@@ -60,5 +61,9 @@
 			<artifactId>jsoup</artifactId>
 			<version>1.10.2</version>
 		</dependency>
+			<dependency>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</dependency>
 	</dependencies>
 </project>
